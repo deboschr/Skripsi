@@ -1,0 +1,22 @@
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{0.5cm}|p{3cm}|p{5cm}|p{5cm}|p{1.5cm}|}
+        \hline
+        \rowcolor[HTML]{DAE8FC} 
+        \textbf{No} & \textbf{Skenario} & \textbf{Kasus Uji} & \textbf{Hasil yang Diharapkan} & \textbf{Hasil} \\ \hline
+        1 & Menghapus data dengan ID valid & 
+        id: 1 & 
+        Status code 200 OK, berhasil menghapus data konfigurasi basis data & 
+        Berhasil \\ \hline
+        2 & Menghapus data dengan ID yang tidak ditemukan & 
+        id: 999 & 
+        Status code 404 Not Found, gagal karena ID tidak ditemukan & 
+        Berhasil \\ \hline
+        3 & Menghapus data yang memiliki relasi dengan tabel lain & 
+        id: 2 & 
+        Status code 409 Conflict, gagal karena data berelasi dengan tabel lain & 
+        Berhasil \\ \hline
+    \end{tabular}
+    \caption{Pengujian Fungsional Endpoint DELETE /db-config/:id}
+    \label{tab:db_config_delete_testing}
+\end{table}

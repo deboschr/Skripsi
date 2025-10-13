@@ -1,0 +1,20 @@
+Langkah-langkah kerja yang berhasil diselesaikan dalam Tugas Akhir 1 ini adalah sebagai berikut:
+\begin{enumerate}
+    \item Telah dilakukan studi literatur mengenai pengembangan aplikasi berbasis web, \textit{Enterprise Application Integration} (EAI), \textit{Application Programming Interface} (API), OpenAPI, SSO OAuth 2.0, serta generator konten website. Studi literatur ini menghasilkan pemahaman mendalam mengenai konsep dasar, teknologi, dan praktik terbaik yang relevan untuk pengembangan sistem.
+
+    \item Telah dirancang fitur-fitur utama generator konten website berbasis API berdasarkan kebutuhan sistem, termasuk pengelolaan templat, \textit{generate website}, dan sinkronisasi data. Fitur ini dirancang dengan mempertimbangkan keamanan dan keandalan untuk mendukung berbagai kebutuhan organisasi.
+
+    \item Telah dilakukan perancangan arsitektur sistem generator konten website berbasis API. Perancangan ini mencakup enam komponen utama, yaitu API generator, modul sinkronisasi data, basis data templat, basis data aplikasi web, API aplikasi internal, dan pengguna. Diagram arsitektur sistem telah disusun untuk memberikan gambaran visual mengenai hubungan antar komponen.
+
+    \item Telah dirancang basis data templat untuk mendukung pengelolaan templat website. Rancangan ini meliputi entitas dan atribut yang mencakup templat website, aset statis, aset dinamis, dan konfigurasi sinkronisasi data.
+
+    \item Telah dirancang modul sinkronisasi data yang bertugas untuk melakukan sinkronisasi data antara basis data aplikasi web dan API aplikasi internal. Modul ini dirancang menggunakan pendekatan ETL (\textit{Extract, Transform, Load}) dengan penjadwalan otomatis berbasis \textit{cron}.
+
+    \item Telah dirancang sistem autentikasi berbasis SSO menggunakan OAuth 2.0 Google untuk mendukung login pengguna di aplikasi web hasil generate. Sistem ini memungkinkan integrasi dengan kredensial Google sekaligus memastikan bahwa hanya pengguna yang terdaftar dalam basis data aplikasi yang dapat mengakses sistem.
+
+    \item Telah dilakukan implementasi generator konten website berbasis API, termasuk fitur pengelolaan templat dan proses \textit{generate website}. Proses pengelolaan templat memungkinkan pengguna untuk membuat, memperbarui, dan menghapus templat sesuai kebutuhan, sementara fitur \textit{generate website} memastikan bahwa website yang dihasilkan sesuai dengan struktur templat yang telah dirancang.
+
+    \item Telah dilakukan implementasi modul sinkronisasi data untuk mendukung sinkronisasi otomatis berdasarkan jadwal yang telah ditentukan. Implementasi ini meliputi fungsi ekstraksi data dari basis data aplikasi web, transformasi data sesuai format API aplikasi internal, dan pengiriman data ke endpoint API tujuan.
+
+    \item Telah dilakukan pengujian fungsional terhadap generator konten \textit{website} berbasis API untuk memastikan bahwa setiap fitur bekerja sesuai spesifikasi yang telah dirancang. Pengujian meliputi pengelolaan templat, proses \textit{generate website}, autentikasi pengguna melalui SSO, serta sinkronisasi data.
+\end{enumerate}

@@ -1,0 +1,26 @@
+\begin{lstlisting}[language=Javascript,caption={Penjadwalan Job}]
+const createJob = async (dataJob) => {
+	try {
+		const job = schedule.scheduleJob(
+			dataJob.name,
+			dataJob.cron,
+			async function () {
+				try {
+					await etl(dataJob);
+
+					const currDate = new Date().toLocaleString();
+					console.log(`Job ${dataJob.name} selesai pada ${currDate}`);
+				} catch (etlError) {
+					console.error(
+						`Error dalam ETL untuk job ${dataJob.name}: ${etlError.message}`
+					);
+				}
+			}
+		);
+
+		JOBS[dataJob.name] = job;
+	} catch (error) {
+		throw error;
+	}
+};
+\end{lstlisting}

@@ -1,0 +1,147 @@
+\begin{lstlisting}[language=Javascript,caption={User Controller}]
+const { UserService } = require("../services/UserService");
+const { responseHandler } = require("../utils/responseHandler");
+const { Validator } = require("../utils/validator");
+
+class UserController {
+	static async getAll(req, res) {
+		try {
+			let { error } = Validator.getAllUser(req.query);
+
+			if (error) {
+				const newError = new Error(error.details[0].message);
+				newError.code = 400;
+				throw newError;
+			}
+
+			let { data, meta } = await UserService.readAll(req.query);
+
+			responseHandler(res, 200, data, meta);
+		} catch (error) {
+			console.error(error);
+			responseHandler(res, error.code, null, null, error.message);
+		}
+	}
+
+	static async getOne(req, res) {
+		try {
+			let data = await UserService.readOne(req.params.id);
+
+			responseHandler(res, 200, data);
+		} catch (error) {
+			console.error(error);
+			responseHandler(res, error.code, null, null, error.message);
+		}
+	}
+
+	static async patch(req, res) {
+		try {
+			let { error } = Validator.updateUser(req.body);
+
+			if (error) {
+				const newError = new Error(error.details[0].message);
+				newError.code = 400;
+				throw newError;
+			}
+
+			let data = await UserService.update(
+				req.params.id,
+				req.body,
+				req.dataSession
+			);
+
+			responseHandler(res, 200, data);
+		} catch (error) {
+			console.error(error);
+			responseHandler(res, error.code, null, null, error.message);
+		}
+	}
+
+	static async delete(req, res) {
+		try {
+			let { _, is_signout } = await UserService.delete(
+				req.params.id,
+				req.dataSession
+			);
+
+			if (is_signout) {
+				await new Promise((resolve, reject) => {
+					req.session.destroy((err) => {
+						if (err) {
+							reject(err);
+						} else {
+							resolve();
+						}
+					});
+				});
+			}
+
+			responseHandler(res, 200);
+		} catch (error) {
+			console.error(error);
+			responseHandler(res, error.code, null, null, error.message);
+		}
+	}
+
+	static async signup(req, res) {
+		try {
+			let { error } = Validator.signup(req.body);
+
+			if (error) {
+				const newError = new Error(error.details[0].message);
+				newError.code = 400;
+				throw newError;
+			}
+
+			const data = await UserService.signup(req.body);
+
+			responseHandler(res, 201, data);
+		} catch (error) {
+			console.error(error);
+			responseHandler(res, error.code, null, null, error.message);
+		}
+	}
+
+	static async signin(req, res) {
+		try {
+			let { error } = Validator.signin(req.body);
+
+			if (error) {
+				const newError = new Error(error.details[0].message);
+				newError.code = 400;
+				throw newError;
+			}
+
+			const { token, payload } = await UserService.signin(req.body);
+
+			req.session.token = token;
+
+			responseHandler(res, 200, payload);
+		} catch (error) {
+			console.error(error);
+			responseHandler(res, error.code, null, null, error.message);
+		}
+	}
+
+	static async signout(req, res) {
+		try {
+			await new Promise((resolve, reject) => {
+				req.session.destroy((err) => {
+					if (err) {
+						reject(err);
+					} else {
+						resolve();
+					}
+				});
+			});
+
+			responseHandler(res, 200);
+		} catch (error) {
+			console.error(error);
+			responseHandler(res, error.code, null, null, error.message);
+		}
+	}
+}
+
+module.exports = { UserController };
+\end{lstlisting}

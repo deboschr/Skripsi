@@ -1,0 +1,22 @@
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{0.5cm}|p{3cm}|p{5cm}|p{5cm}|p{1.5cm}|}
+        \hline
+        \rowcolor[HTML]{DAE8FC} 
+        \textbf{No} & \textbf{Skenario} & \textbf{Kasus Uji} & \textbf{Hasil yang Diharapkan} & \textbf{Hasil} \\ \hline
+        1 & Mengakses tanpa parameter & 
+        Tidak ada parameter & 
+        Status code 200 OK, mengembalikan semua data konfigurasi basis data & 
+        Berhasil \\ \hline
+        2 & Mengakses dengan parameter pagination & 
+        page: 1 \newline limit: 10 & 
+        Status code 200 OK, mengembalikan data konfigurasi basis data sesuai parameter & 
+        Berhasil \\ \hline
+        3 & Mengakses dengan parameter pagination yang invalid & 
+        page: -1 \newline limit: 10 & 
+        Status code 400 Bad Request, gagal karena parameter tidak valid & 
+        Berhasil \\ \hline
+    \end{tabular}
+    \caption{Pengujian Fungsional Endpoint GET /db-config}
+    \label{tab:db_config_getall_testing}
+\end{table}

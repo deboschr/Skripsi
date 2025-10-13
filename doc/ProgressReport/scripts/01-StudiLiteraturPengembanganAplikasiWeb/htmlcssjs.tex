@@ -1,0 +1,43 @@
+\begin{lstlisting}[language=Javascript,caption={HTML, CSS dan JavaScript}]
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contoh Sederhana</title>
+    <style>
+        /* Menggabungkan CSS langsung di dalam tag <style> */
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            text-align: center;
+        }
+
+        p {
+            color: #333;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <p id="message">Halo, ini adalah contoh penggunaan HTML, CSS, dan JavaScript!</p>
+    <button onclick="changeColor()">Ubah Warna</button>
+
+    <script>
+        // Menggabungkan JavaScript langsung di dalam tag <script>
+        function changeColor() {
+            document.getElementById("message").style.color = "blue";
+        }
+    </script>
+</body>
+</html>
+\end{lstlisting}

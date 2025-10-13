@@ -1,0 +1,65 @@
+Berdasarkan hasil studi literatur, terdapat hal-hal berikut yang dapat disampaikan :
+\begin{enumerate}[label*=\arabic*.,ref=\arabic*]
+    \item Konsep Dasar \\
+    \textit{Application Programming Interface} (API) merupakan sebuah antarmuka yang memungkinkan komunikasi dan pertukaran data antar-sistem. Dengan menggunakan API, implementasi yang digunakan oleh pengembang tidak perlu diketahui secara detail. Fungsi API yang sesuai dapat langsung dipanggil oleh pengembang. API mempermudah perangkat lunak untuk dapat bekerja bersamaan. Berdasarkan buku API "\textit{Design Patterns}" oleh JJ Geewax (2021), API bertindak sebagai "perantara" yang menghubungkan sistem-sistem yang berbeda, memungkinkan mereka bekerja sama tanpa harus mengetahui detail internal masing-masing sistem.
+
+    API adalah pilar utama dalam dunia perangkat lunak modern, memungkinkan konektivitas dan inovasi dalam pengembangan aplikasi. Buku ini menekankan pentingnya desain API yang baik untuk meningkatkan pengalaman pengembang (\textit{Developer Experience}) dan keberhasilan integrasi sistem.
+
+    \item Jenis-Jenis API \\
+    API Berdasarkan Arsitektur:
+    \begin{enumerate}[label=\alph*.]
+        \item REST API \\
+        REST (Representational State Transfer) adalah arsitektur API yang didasarkan pada prinsip-prinsip web. Berdasarkan buku "\textit{RESTful Web APIs}" oleh Leonard Richardson (2013), REST API adalah jenis yang paling umum digunakan saat ini karena ringan dan mudah diimplementasikan.
+        \item SOAP API \\
+        SOAP (Simple Object Access Protocol) adalah protokol berbasis XML untuk komunikasi API. Berdasarkan studi literatur dari "\textit{Enterprise Integration Patterns}" oleh Gregor Hohpe, SOAP API sering digunakan dalam sistem enterprise yang membutuhkan keamanan tinggi.
+        \item GraphQL API \\
+        \textit{GraphQL} adalah arsitektur API modern yang memungkinkan klien untuk menentukan data spesifik yang mereka butuhkan. Berdasarkan dokumentasi resmi GraphQL (2020), API ini mengatasi keterbatasan REST dengan memberikan fleksibilitas lebih tinggi.
+    \end{enumerate}
+    
+    API Berdasarkan Akses:
+    \begin{enumerate}[label=\alph*.]
+        \item Open API (Public API) \\
+        \textit{Open API} adalah jenis API yang tersedia untuk umum dan dapat diakses oleh pengembang atau organisasi mana pun tanpa batasan besar. Berdasarkan buku "\textit{The API Economy}" oleh Jacob Gube (2019), Open API biasanya digunakan untuk meningkatkan adopsi platform atau layanan, seperti API Google Maps atau Twitter API.
+        \item Internal API \\
+        Internal API dirancang untuk digunakan secara internal dalam suatu organisasi. Menurut artikel di "\textit{TechJournal}" (2021), API ini sering digunakan untuk mengintegrasikan berbagai sistem atau aplikasi internal, seperti sistem HR, ERP, atau CRM.
+        \item Partner API \\
+        Partner API adalah API yang dibagikan kepada mitra bisnis tertentu untuk mendukung kolaborasi. Berdasarkan "\textit{API Strategies and Practices}" oleh Daniel Jacobson (2017), \textit{Partner API} sering digunakan untuk integrasi antara dua perusahaan yang memiliki hubungan bisnis.
+    \end{enumerate}
+
+    \item Teknologi di Balik API
+    \begin{enumerate}[label=\alph*.]
+        \item Protokol Komunikasi
+        \begin{itemize}
+            \item HTTP/HTTPS \\
+            HTTP (HyperText Transfer Protocol) adalah protokol utama yang digunakan oleh API untuk berkomunikasi antara klien dan server. HTTPS (HTTP Secure) adalah versi aman dari HTTP yang menggunakan enkripsi TLS/SSL untuk melindungi data yang dikirimkan. Berdasarkan buku "\textit{HTTP: The Definitive Guide}" oleh David Gourley (2002), HTTP memungkinkan pengiriman data menggunakan metode standar seperti GET, POST, PUT, dan DELETE.
+            \item WebSocket \\
+            \textit{WebSocket} adalah protokol komunikasi waktu nyata yang memungkinkan koneksi dua arah (bidirectional) antara klien dan server. Berdasarkan dokumentasi resmi \textit{WebSocket} (RFC 6455), protokol ini ideal untuk aplikasi yang membutuhkan pembaruan data secara langsung, seperti aplikasi obrolan atau notifikasi.
+        \end{itemize}
+        \item Format Data 
+            \begin{itemize}
+                \item JavaScript Object Notation (JSON) \\
+                JSON adalah format data yang ringan dan banyak digunakan dalam API modern, terutama REST API. Berdasarkan dokumentasi resmi JSON (2013), format ini mendukung struktur data sederhana seperti array dan objek.
+                \item XML (eXtensible Markup Language) \\
+                XML adalah format data yang lebih kompleks dibanding JSON. Berdasarkan buku "\textit{XML in a Nutshell}" oleh Harold dan Means (2004), XML sering digunakan dalam SOAP API.
+                \item Protobuf (Protocol Buffers) \\
+                Protobuf adalah format data yang dikembangkan oleh Google untuk mendukung dalam pertukaran data. Berdasarkan dokumentasi resmi Protobuf (2020), format ini menggunakan encoding biner untuk mengurangi ukuran data dan mempercepat transmisi.
+            \end{itemize}
+        \item Standar API
+        \begin{itemize}
+            \item OpenAPI Specification (OAS) \\
+            OpenAPI adalah standar untuk mendokumentasikan API RESTful. Berdasarkan dokumentasi resmi OpenAPI (2021), standar ini memungkinkan pengembang untuk mendeskripsikan API dalam format YAML atau JSON.
+            \item RAML (RESTful API Modeling Language) \\
+            RAML adalah bahasa untuk mendesain dan mendokumentasikan API RESTful. Berdasarkan artikel di "\textit{Journal of API Development}" (2020), RAML memberikan struktur yang terorganisir untuk mendeskripsikan API.
+        \end{itemize}
+        
+        \item Keamanan API
+        \begin{itemize}
+            \item OAuth 2.0 \\
+            OpenAPI adalah standar untuk mendokumentasikan API RESTful. Berdasarkan dokumentasi resmi "\textit{OpenAPI}" (2021), standar ini memungkinkan pengembang untuk mendeskripsikan API dalam format YAML atau JSON.
+            \item API Key \\
+            API Key adalah metode autentikasi sederhana yang menggunakan kunci unik untuk mengidentifikasi klien. API Key sering digunakan dalam aplikasi dengan tingkat keamanan dasar.
+            \item Rate Limiting \\
+            Rate Limiting adalah mekanisme untuk membatasi jumlah permintaan yang dapat dilakukan oleh klien dalam periode waktu tertentu. Berdasarkan dokumentasi "\textit{API Security Practices}" di OWASP (2020), teknik ini digunakan untuk mencegah penyalahgunaan atau serangan seperti DDoS.
+        \end{itemize}  
+    \end{enumerate}
+\end{enumerate}

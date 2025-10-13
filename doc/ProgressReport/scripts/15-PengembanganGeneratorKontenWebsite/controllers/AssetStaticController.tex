@@ -1,0 +1,105 @@
+\begin{lstlisting}[language=Javascript,caption={Asset Static Controller}]
+const { AssetStaticService } = require("../services/AssetStaticService");
+const { Validator } = require("../utils/validator");
+const { responseHandler } = require("../utils/responseHandler");
+
+class AssetStaticController {
+	static async getAll(req, res) {
+		try {
+			let { error } = Validator.getAllAssetStatic(req.query);
+
+			if (error) {
+				const newError = new Error(error.details[0].message);
+				newError.code = 400;
+				throw newError;
+			}
+
+			let { data, meta } = await AssetStaticService.readAll(req.query);
+
+			responseHandler(res, 200, data, meta);
+		} catch (error) {
+			console.error(error);
+			responseHandler(res, error.code, null, null, error.message);
+		}
+	}
+
+	static async getOne(req, res) {
+		try {
+			let readAssetStatic = await AssetStaticService.readOne(req.params.id);
+
+			responseHandler(res, 200, readAssetStatic);
+		} catch (error) {
+			console.error(error);
+			responseHandler(res, error.code, null, null, error.message);
+		}
+	}
+
+	static async post(req, res) {
+		try {
+			let { error } = Validator.createAssetStatic(req.body);
+
+			if (error) {
+				const newError = new Error(error.details[0].message);
+				newError.code = 400;
+				throw newError;
+			}
+
+			const createAssetStatic = await AssetStaticService.create(
+				req.body,
+				req.dataSession
+			);
+
+			responseHandler(res, 201, createAssetStatic);
+		} catch (error) {
+			console.error(error);
+			responseHandler(res, error.code, null, null, error.message);
+		}
+	}
+
+	static async patch(req, res) {
+		try {
+			let { error } = Validator.updateAssetStatic(req.body);
+
+			if (error) {
+				const newError = new Error(error.details[0].message);
+				newError.code = 400;
+				throw newError;
+			}
+
+			const updateAssetStatic = await AssetStaticService.update(
+				req.params.id,
+				req.body,
+				req.dataSession
+			);
+
+			responseHandler(res, 200, updateAssetStatic);
+		} catch (error) {
+			console.error(error);
+			responseHandler(res, error.code, null, null, error.message);
+		}
+	}
+
+	static async delete(req, res) {
+		try {
+			let { error } = Validator.deleteAssetStatic({
+				asset_static_id: req.params.id,
+			});
+
+			if (error) {
+				const newError = new Error(error.details[0].message);
+				newError.code = 400;
+				throw newError;
+			}
+
+			await AssetStaticService.delete(req.params.id);
+
+			responseHandler(res, 200);
+		} catch (error) {
+			console.error(error);
+			responseHandler(res, error.code, null, null, error.message);
+		}
+	}
+}
+
+module.exports = { AssetStaticController };
+\end{lstlisting}

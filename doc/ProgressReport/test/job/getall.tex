@@ -1,0 +1,22 @@
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{0.5cm}|p{3cm}|p{5cm}|p{5cm}|p{1.5cm}|}
+        \hline
+        \rowcolor[HTML]{DAE8FC} 
+        \textbf{No} & \textbf{Skenario} & \textbf{Kasus Uji} & \textbf{Hasil yang Diharapkan} & \textbf{Hasil} \\ \hline
+        1 & Mengakses semua data job tanpa pagination & 
+        Tidak ada parameter & 
+        Status code 200 OK, mengembalikan semua data job & 
+        Berhasil \\ \hline
+        2 & Mengakses data job dengan pagination & 
+        page: 1 \newline limit: 10 & 
+        Status code 200 OK, mengembalikan data job sesuai parameter pagination & 
+        Berhasil \\ \hline
+        3 & Mengirim parameter pagination tidak valid & 
+        page: -1 \newline limit: 10 & 
+        Status code 400 Bad Request, gagal karena parameter pagination tidak valid & 
+        Berhasil \\ \hline
+    \end{tabular}
+    \caption{Pengujian Fungsional Endpoint GET /job}
+    \label{tab:job_getall_testing}
+\end{table}

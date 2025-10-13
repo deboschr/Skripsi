@@ -1,0 +1,34 @@
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{0.5cm}|p{3cm}|p{5cm}|p{5cm}|p{1.5cm}|}
+        \hline
+        \rowcolor[HTML]{DAE8FC} 
+        \textbf{No} & \textbf{Skenario} & \textbf{Kasus Uji} & \textbf{Hasil yang Diharapkan} & \textbf{Hasil} \\ \hline
+        1 & Mengirim data valid & 
+        website\_id: 1 \newline 
+        asset\_dynamic\_ids: [1, 2, 3] & 
+        Status code 201 Created, berhasil menghasilkan website baru berdasarkan templat & 
+        Berhasil \\ \hline
+        2 & Tidak mengirimkan asset\_dynamic\_ids & 
+        website\_id: 1 & 
+        Status code 201 Created, berhasil menghasilkan website baru dengan semua aset dinamis yang terkait & 
+        Berhasil \\ \hline
+        3 & Mengirim website\_id yang tidak valid & 
+        website\_id: "string" \newline 
+        asset\_dynamic\_ids: [1, 2] & 
+        Status code 400 Bad Request, gagal karena website\_id harus berupa bilangan bulat positif & 
+        Berhasil \\ \hline
+        4 & Mengirimkan asset\_dynamic\_ids kosong & 
+        website\_id: 1 \newline 
+        asset\_dynamic\_ids: [] & 
+        Status code 400 Bad Request, gagal karena minimal satu asset\_dynamic\_id harus diberikan & 
+        Berhasil \\ \hline
+        5 & Mengirimkan asset\_dynamic\_ids duplikat & 
+        website\_id: 1 \newline 
+        asset\_dynamic\_ids: [1, 1, 2] & 
+        Status code 400 Bad Request, gagal karena asset\_dynamic\_ids tidak boleh mengandung duplikat & 
+        Berhasil \\ \hline
+    \end{tabular}
+    \caption{Pengujian Fungsional Endpoint POST /generate}
+    \label{tab:generate_post_testing}
+\end{table}

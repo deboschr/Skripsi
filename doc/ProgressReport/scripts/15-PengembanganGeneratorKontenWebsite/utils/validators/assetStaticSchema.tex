@@ -1,0 +1,36 @@
+\begin{lstlisting}[language=Javascript,caption={Validasi Masukan Data Aset Statis}]
+createAssetStatic(data) {
+   const schema = Joi.object({
+      website_id: Joi.number().integer().min(1).required().messages({
+         "number.base": "Website ID must be a number.",
+         "number.integer": "Website ID must be an integer.",
+         "number.min": "Website ID must be at least 1.",
+         "any.required": "Website ID is required.",
+      }),
+      parent_id: Joi.number().integer().min(1).allow(null).optional().messages({
+         "number.base": "Parent ID must be a number.",
+         "number.integer": "Parent ID must be an integer.",
+         "number.min": "Parent ID must be at least 1.",
+      }),
+      name: Joi.string().max(200).required().messages({
+         "string.base": "Name must be a string.",
+         "string.empty": "Name cannot be empty.",
+         "string.max": "Name cannot exceed 200 characters.",
+         "any.required": "Name is required.",
+      }),
+      type: Joi.string().valid("file", "folder").required().messages({
+         "string.base": "Type must be a string.",
+         "any.only": "Type must be either 'file' or 'folder'.",
+         "any.required": "Type is required.",
+      }),
+      content: Joi.string().allow(null).optional().messages({
+         "string.base": "Content must be a string.",
+      }),
+      placeholders: Joi.object().allow(null).optional().messages({
+         "object.base": "Placeholders must be an object or null.",
+      }),
+   }).required();
+
+   return schema.validate(data, { abortEarly: false });
+}
+\end{lstlisting}

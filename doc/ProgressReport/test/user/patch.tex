@@ -1,0 +1,48 @@
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{0.5cm}|p{3cm}|p{5cm}|p{5cm}|p{1.5cm}|}
+        \hline
+        \rowcolor[HTML]{DAE8FC} 
+        \textbf{No} & \textbf{Skenario} & \textbf{Kasus Uji} & \textbf{Hasil yang Diharapkan} & \textbf{Hasil} \\ \hline
+        1 & Mengirim data valid untuk pembaruan nama dan email & 
+        id: 1 \newline 
+        name: Jake Spencher \newline 
+        email: jakespencher@gmail.com & 
+        Status code 200 OK, berhasil memperbarui data pengguna dengan ID 1 dan mengembalikan data terbaru & 
+        Berhasil \\ \hline
+        2 & Mengirim data valid untuk pembaruan password & 
+        id: 1 \newline 
+        old\_password: JakeXSchr123 \newline 
+        new\_password: JakeSchr123 & 
+        Status code 200 OK, berhasil memperbarui password pengguna dengan ID 1 & 
+        Berhasil \\ \hline
+        3 & Mengirim hanya new\_password tanpa old\_password & 
+        id: 1 \newline 
+        new\_password: JakeSchr123 & 
+        Status code 400 Bad Request, gagal memperbarui data dan mengembalikan pesan error bahwa old\_password harus dikirim bersamaan & 
+        Berhasil \\ \hline
+        4 & Mengirim hanya old\_password tanpa new\_password & 
+        id: 1 \newline 
+        old\_password: JakeXSchr123 & 
+        Status code 400 Bad Request, gagal memperbarui data dan mengembalikan pesan error bahwa new\_password harus dikirim bersamaan & 
+        Berhasil \\ \hline
+        5 & Mengirim data dengan old\_password yang salah & 
+        id: 1 \newline 
+        old\_password: WrongPass123 \newline 
+        new\_password: JakeSchr123 & 
+        Status code 401 Unauthorized, gagal memperbarui data karena password lama tidak cocok & 
+        Berhasil \\ \hline
+        6 & Mengakses endpoint dengan ID yang tidak ditemukan & 
+        id: 9999 \newline 
+        name: Jake Spencher \newline 
+        email: jakespencher@gmail.com & 
+        Status code 404 Not Found, gagal memperbarui data karena pengguna tidak ditemukan & 
+        Berhasil \\ \hline
+        7 & Tidak mengirimkan atribut apa pun di body & 
+        id: 1 & 
+        Status code 400 Bad Request, gagal memperbarui data dan mengembalikan pesan error bahwa minimal satu atribut harus dikirim & 
+        Berhasil \\ \hline
+    \end{tabular}
+    \caption{Pengujian Fungsional Endpoint PATCH /user/:id}
+    \label{tab:user_patch_testing}
+\end{table}

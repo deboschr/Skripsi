@@ -1,4 +1,3 @@
-
 \textit{Uniform Resource Identifier} (URI) adalah string karakter yang digunakan untuk mengidentifikasi suatu sumber daya. Identifikasi tersebut dapat berupa lokasi, nama, atau kombinasi keduanya. Spesifikasi URI ditetapkan dalam RFC~3986 yang mendefinisikan aturan sintaks, komponen, serta mekanisme representasi sumber daya.
 
 RFC~3986 mendeskripsikan URI sebagai konsep umum yang memiliki beberapa bentuk. Dua bentuk yang paling dikenal adalah \textit{Uniform Resource Locator} (URL) dan \textit{Uniform Resource Name} (URN). URL adalah URI yang menyertakan informasi lokasi dan mekanisme akses terhadap sumber daya, contohnya \texttt{http://unpar.ac.id/index.html}. URN adalah URI yang berfungsi sebagai nama tetap suatu sumber daya tanpa menyertakan lokasi aksesnya, contohnya \texttt{urn:isbn:0451450523}. RFC juga membedakan URI yang bersifat hierarkis dan URI yang bersifat opak. URI hierarkis memiliki komponen seperti \textit{authority} dan \textit{path}, misalnya skema \texttt{http}. URI opak tidak dapat diuraikan ke dalam komponen hierarkis, misalnya skema \texttt{mailto}.
@@ -52,21 +51,3 @@ Pengkodean karakter dilakukan dengan mekanisme \textit{percent-encoding}. Mekani
 URL dapat berupa referensi absolut maupun relatif. URL absolut mencantumkan seluruh komponen utama termasuk scheme dan authority, sehingga dapat diinterpretasikan secara mandiri. Contohnya adalah \texttt{https://unpar.ac.id/page.html}. URL relatif tidak mencantumkan scheme atau authority dan hanya menyertakan path, query, atau fragment. Contohnya adalah \texttt{images/logo.png}. Selain itu terdapat pula same-document reference, yaitu URL yang hanya berisi fragment untuk merujuk ke bagian tertentu dalam dokumen yang sama, contohnya \texttt{\#section2}.
 
 RFC~3986 mendefinisikan mekanisme resolusi yang digunakan untuk menyusun URL absolut dari sebuah referensi relatif. Resolusi dilakukan dengan menentukan base URI, menggabungkannya dengan URL relatif, lalu menyederhanakan hasilnya. Salah satu tahap penting dalam resolusi adalah penghapusan dot-segments. Prosedur ini menghilangkan segmen \texttt{.} dan \texttt{..} agar path hasil resolusi berada dalam bentuk yang ringkas dan tidak ambigu.
-
-\subsection{Normalisasi URL}
-\label{subsec:0202-normalisasi-url}
-
-Normalisasi adalah proses menyeragamkan URL ke bentuk kanonik sebagaimana diatur dalam RFC~3986. Proses ini diperlukan agar URL yang secara sintaksis berbeda tetapi menunjuk ke sumber daya yang sama dapat diperlakukan setara. Bentuk normalisasi meliputi:
-\begin{itemize}
-  \item \textbf{Normalisasi huruf}\\
-  Bagian scheme dan host dituliskan dalam huruf kecil. Sebagai contoh, \texttt{HTTP://Unpar.ac.id} dinormalisasi menjadi \texttt{http://unpar.ac.id}.
-  
-  \item \textbf{Normalisasi percent-encoding}\\
-  Digit heksadesimal dalam percent-encoding harus ditulis dengan huruf besar. Selain itu, karakter unreserved yang dituliskan dalam bentuk percent-encoding diganti dengan bentuk aslinya. Sebagai contoh, \texttt{\%7E} dinormalisasi menjadi \texttt{\~{}}.
-  
-  \item \textbf{Normalisasi path}\\
-  Segmen khusus berupa \texttt{.} dan \texttt{..} dihapus sesuai prosedur agar path menjadi ringkas. Sebagai contoh, \texttt{/a/b/../c/./d.html} dinormalisasi menjadi \texttt{/a/c/d.html}.
-  
-  \item \textbf{Penghapusan port default}\\
-  Jika nomor port yang dituliskan sesuai dengan \textit{port default} dari skema, maka port tersebut dihapus. Contohnya, \texttt{http://unpar.ac.id:80} dinormalisasi menjadi \texttt{http://unpar.ac.id}.
-\end{itemize}

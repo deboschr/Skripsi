@@ -1,0 +1,33 @@
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{0.5cm}|p{3cm}|p{5cm}|p{5cm}|p{1.5cm}|}
+        \hline
+        \rowcolor[HTML]{DAE8FC} 
+        \textbf{No} & \textbf{Skenario} & \textbf{Kasus Uji} & \textbf{Hasil yang Diharapkan} & \textbf{Hasil} \\ \hline
+        1 & Mengirim data valid & 
+        name: Jake Spencher \newline 
+        email: jakespencher@gmail.com \newline 
+        password: JakeSchr123 & 
+        Status code 201 Created, berhasil mendaftarkan pengguna baru dan mengembalikan data pengguna & 
+        Berhasil \\ \hline
+        2 & Mengirim data dengan email yang sudah terdaftar & 
+        name: Jake Spencher \newline 
+        email: jakespencher@gmail.com \newline 
+        password: JakeSchr123 & 
+        Status code 409 Conflict, gagal mendaftarkan pengguna dan mengembalikan pesan error "Email already exists" & 
+        Berhasil \\ \hline
+        3 & Mengirim data tidak lengkap (tanpa password) & 
+        name: Jake Spencher \newline 
+        email: jakespencher@gmail.com & 
+        Status code 400 Bad Request, gagal mendaftarkan pengguna dan mengembalikan pesan error "Password is required" & 
+        Berhasil \\ \hline
+        4 & Mengirim data dengan format email yang tidak valid & 
+        name: Jake Spencher \newline 
+        email: jakespencher \newline 
+        password: JakeSchr123 & 
+        Status code 400 Bad Request, gagal mendaftarkan pengguna dan mengembalikan pesan error "Invalid email format" & 
+        Berhasil \\ \hline
+    \end{tabular}
+    \caption{Pengujian Fungsional Endpoint POST /user/signup}
+    \label{tab:user_signup_testing}
+\end{table}

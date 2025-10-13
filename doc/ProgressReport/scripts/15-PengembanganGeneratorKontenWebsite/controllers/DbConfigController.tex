@@ -1,0 +1,100 @@
+\begin{lstlisting}[language=Javascript,caption={Database Config Controller}]
+const { DbConfigService } = require("../services/DbConfigService");
+const { Validator } = require("../utils/validator");
+const { responseHandler } = require("../utils/responseHandler");
+
+class DbConfigController {
+	static async getAll(req, res) {
+		try {
+			let { error } = Validator.getAllDbConfig(req.query);
+
+			if (error) {
+				const newError = new Error(error.details[0].message);
+				newError.code = 400;
+				throw newError;
+			}
+
+			let { data, meta } = await DbConfigService.readAll(req.query);
+
+			responseHandler(res, 200, data, meta);
+		} catch (error) {
+			console.error(error);
+			responseHandler(res, error.code, null, null, error.message);
+		}
+	}
+
+	static async getOne(req, res) {
+		try {
+			let data = await DbConfigService.readOne(req.params.id);
+
+			responseHandler(res, 200, data);
+		} catch (error) {
+			console.error(error);
+			responseHandler(res, error.code, null, null, error.message);
+		}
+	}
+
+	static async post(req, res) {
+		try {
+			let { error } = Validator.createDbConfig(req.body);
+
+			if (error) {
+				const newError = new Error(error.details[0].message);
+				newError.code = 400;
+				throw newError;
+			}
+
+			const data = await DbConfigService.create(req.body, req.dataSession);
+
+			responseHandler(res, 201, data);
+		} catch (error) {
+			console.error(error);
+			responseHandler(res, error.code, null, null, error.message);
+		}
+	}
+
+	static async patch(req, res) {
+		try {
+			let { error } = Validator.updateDbConfig(req.body);
+
+			if (error) {
+				const newError = new Error(error.details[0].message);
+				newError.code = 400;
+				throw newError;
+			}
+
+			const data = await DbConfigService.update(
+				req.params.id,
+				req.body,
+				req.dataSession
+			);
+
+			responseHandler(res, 200, data);
+		} catch (error) {
+			console.error(error);
+			responseHandler(res, error.code, null, null, error.message);
+		}
+	}
+
+	static async delete(req, res) {
+		try {
+			let { error } = Validator.deleteDbConfig({ db_config_id: req.params.id });
+
+			if (error) {
+				const newError = new Error(error.details[0].message);
+				newError.code = 400;
+				throw newError;
+			}
+
+			await DbConfigService.delete(req.params.id);
+
+			responseHandler(res, 200);
+		} catch (error) {
+			console.error(error);
+			responseHandler(res, error.code, null, null, error.message);
+		}
+	}
+}
+
+module.exports = { DbConfigController };
+\end{lstlisting}

@@ -1,0 +1,34 @@
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{0.5cm}|p{3cm}|p{5cm}|p{5cm}|p{1.5cm}|}
+        \hline
+        \rowcolor[HTML]{DAE8FC} 
+        \textbf{No} & \textbf{Skenario} & \textbf{Kasus Uji} & \textbf{Hasil yang Diharapkan} & \textbf{Hasil} \\ \hline
+        1 & Mengirim data valid untuk memperbarui nama website & 
+        id: 1 \newline 
+        name: Website Target Updated & 
+        Status code 200 OK, berhasil memperbarui nama website & 
+        Berhasil \\ \hline
+        2 & Mengirim data dengan nama website yang sudah digunakan & 
+        id: 2 \newline 
+        name: Website Target 1 & 
+        Status code 409 Conflict, gagal karena nama website sudah digunakan & 
+        Berhasil \\ \hline
+        3 & Mengirim data dengan direktori kosong & 
+        id: 1 \newline 
+        dir\_path: & 
+        Status code 400 Bad Request, gagal karena direktori tidak boleh kosong & 
+        Berhasil \\ \hline
+        4 & Mengirim data tanpa atribut apapun & 
+        id: 1 & 
+        Status code 400 Bad Request, gagal karena data yang dikirim tidak valid & 
+        Berhasil \\ \hline
+        5 & Mengirim data untuk ID yang tidak ditemukan & 
+        id: 999 \newline 
+        name: Website Target Updated & 
+        Status code 404 Not Found, gagal karena ID website tidak ditemukan & 
+        Berhasil \\ \hline
+    \end{tabular}
+    \caption{Pengujian Fungsional Endpoint PATCH /website/:id}
+    \label{tab:website_update_testing}
+\end{table}

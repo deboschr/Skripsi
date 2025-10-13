@@ -1,0 +1,29 @@
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{0.5cm}|p{3cm}|p{5cm}|p{5cm}|p{1.5cm}|}
+        \hline
+        \rowcolor[HTML]{DAE8FC} 
+        \textbf{No} & \textbf{Skenario} & \textbf{Kasus Uji} & \textbf{Hasil yang Diharapkan} & \textbf{Hasil} \\ \hline
+        1 & Mengirim data valid & 
+        email: jakespencher@gmail.com \newline 
+        password: JakeSchr123 & 
+        Status code 200 OK, berhasil signin dan mengembalikan data user & 
+        Berhasil \\ \hline
+        2 & Mengirim password salah & 
+        email: jakespencher@gmail.com \newline 
+        password: JakeSchr321 & 
+        Status code 401 Unauthorized, gagal signin dan mengembalikan pesan error & 
+        Berhasil \\ \hline
+        3 & Mengirim email salah & 
+        email: spencherjake@gmail.com \newline 
+        password: JakeSchr123 & 
+        Status code 404 Not Found, gagal signin dan mengembalikan pesan error & 
+        Berhasil \\ \hline
+        4 & Mengirim data tidak lengkap & 
+        email: jakespencher@gmail.com & 
+        Status code 400 Bad Request, gagal signin dan mengembalikan pesan error & 
+        Berhasil \\ \hline
+    \end{tabular}
+    \caption{Pengujian Fungsional Endpoint POST /user/signin}
+    \label{tab:user_signin_testing}
+\end{table}

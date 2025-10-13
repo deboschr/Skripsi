@@ -1,0 +1,26 @@
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{0.5cm}|p{3cm}|p{5cm}|p{5cm}|p{1.5cm}|}
+        \hline
+        \rowcolor[HTML]{DAE8FC} 
+        \textbf{No} & \textbf{Skenario} & \textbf{Kasus Uji} & \textbf{Hasil yang Diharapkan} & \textbf{Hasil} \\ \hline
+        1 & Mengakses dengan \textit{website\_id} valid tanpa parameter pagination & 
+        website\_id: 1 & 
+        Status code 200 OK, mengembalikan semua data aset statis untuk website\_id yang diberikan & 
+        Berhasil \\ \hline
+        2 & Mengakses dengan parameter pagination & 
+        website\_id: 1 \newline page: 1 \newline limit: 10 & 
+        Status code 200 OK, mengembalikan data aset statis sesuai parameter & 
+        Berhasil \\ \hline
+        3 & Tidak mengirimkan \textit{website\_id} & 
+        Tidak ada website\_id pada query & 
+        Status code 400 Bad Request, gagal karena website\_id wajib dikirimkan & 
+        Berhasil \\ \hline
+        4 & Mengirim parameter pagination tidak valid & 
+        website\_id: 1 \newline page: -1 \newline limit: 10 & 
+        Status code 400 Bad Request, gagal karena parameter pagination tidak valid & 
+        Berhasil \\ \hline
+    \end{tabular}
+    \caption{Pengujian Fungsional Endpoint GET /asset-static}
+    \label{tab:asset_static_getall_testing}
+\end{table}

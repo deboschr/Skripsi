@@ -1,0 +1,208 @@
+Pengujian fungsional bertujuan untuk memastikan bahwa setiap fitur dari Generator Konten Website berbasis API berfungsi sesuai dengan spesifikasi yang telah ditentukan. Pengujian dilakukan dengan menguji endpoint API menggunakan skenario pengujian yang mencakup berbagai kondisi masukan dan keluaran.
+
+\begin{enumerate}[label*=\arabic*.,ref=\arabic*]
+
+    \item \textbf{Tujuan Pengujian}\\
+    Pengujian dilakukan untuk memastikan:
+    \begin{itemize}
+        \item Setiap endpoint API bekerja sesuai dengan spesifikasi yang telah ditentukan.
+        \item Validasi data masukan dilakukan dengan benar oleh API.
+        \item Proses \textit{generate website} menghasilkan output yang sesuai dengan konfigurasi templat.
+        \item Kesalahan dalam implementasi dapat diidentifikasi dan diperbaiki dengan cepat.
+    \end{itemize}
+
+    \item \textbf{Lingkungan Pengujian}\\
+    Pengujian dilakukan pada lingkungan pengembangan dengan konfigurasi sebagai berikut:
+    \begin{itemize}
+        \item \textbf{Alat Pengujian:} Postman untuk Windows v11.22.1
+        \item \textbf{Basis Data:} PostgreSQL
+        \item \textbf{Sistem Operasi:} Windows 11
+        \item \textbf{\textit{Runtime}:} Node.js v20.10.0
+        \item \textbf{Dependensi:} 
+        \begin{itemize}
+            \item express v4.21.2
+            \item express-session v1.18.1
+            \item joi v17.13.3
+            \item pg v8.13.1
+            \item pg-hstore v2.3.4
+            \item sequelize v6.37.5
+            \item body-parser v1.20.3
+            \item jsonwebtoken v9.0.2
+            \item axios v1.7.9
+            \item nodemon v3.1.7
+            \item dotenv v16.4.7
+        \end{itemize}
+    \end{itemize}
+
+    \item \textbf{Skenario Pengujian dan Hasil}\\
+    Pengujian dilakukan berdasarkan skenario yang dirancang untuk setiap endpoint API. Berikut adalah daftar endpoint beserta skenario pengujiannya:
+    \begin{enumerate}[label=\alph*.]
+        \item \textit{Endpoint User:} 
+            \begin{itemize}
+            
+                \item Pengujian Fungsional \textit{Endpoint} POST /user/signin
+                \vspace{-0.5em}
+                \input{test/user/signin}
+                
+                \item Pengujian Fungsional \textit{Endpoint} POST /user/signup
+                \vspace{-0.5em}
+                \input{test/user/signup}
+                
+                \item Pengujian Fungsional \textit{Endpoint} DELETE /user/signout
+                \vspace{-0.5em}
+                \input{test/user/signout}
+                
+                \item Pengujian Fungsional \textit{Endpoint} GET /user
+                \vspace{-0.5em}
+                \input{test/user/getall}
+                
+                \item Pengujian Fungsional \textit{Endpoint} GET /user/:id
+                \vspace{-0.5em}
+                \input{test/user/getone}
+                
+                \item Pengujian Fungsional \textit{Endpoint} PATCH /user/:id
+                \vspace{-0.5em}
+                \input{test/user/patch}
+                
+                \item Pengujian Fungsional \textit{Endpoint} DELETE /user/:id
+                \vspace{-0.5em}
+                \input{test/user/delete}
+                
+            \end{itemize}
+    
+        \item \textit{Endpoint Website:} 
+            \begin{itemize}
+            
+                \item Pengujian Fungsional \textit{Endpoint} GET /website
+                \vspace{-0.5em}
+                \input{test/website/getall}
+                
+                \item Pengujian Fungsional \textit{Endpoint} GET /website/:id
+                \vspace{-0.5em}
+                \input{test/website/getone}
+                
+                \item Pengujian Fungsional \textit{Endpoint} POST /website
+                \vspace{-0.5em}
+                \input{test/website/post}
+                
+                \item Pengujian Fungsional \textit{Endpoint} PATCH /website/:id
+                \vspace{-0.5em}
+                \input{test/website/patch}
+                
+                \item Pengujian Fungsional \textit{Endpoint} DELETE /website/:id
+                \vspace{-0.5em}
+                \input{test/website/delete}
+                
+            \end{itemize}
+    
+        \item \textit{Endpoint Database Config:} 
+            \begin{itemize}
+            
+                \item Pengujian Fungsional \textit{Endpoint} GET /db-config
+                \vspace{-0.5em}
+                \input{test/dbconfig/getall}
+                
+                \item Pengujian Fungsional \textit{Endpoint} GET /db-config/:id
+                \vspace{-0.5em}
+                \input{test/dbconfig/getone}
+                
+                \item Pengujian Fungsional \textit{Endpoint} POST /db-config
+                \vspace{-0.5em}
+                \input{test/dbconfig/post}
+                
+                \item Pengujian Fungsional \textit{Endpoint} PATCH /db-config/:id
+                \vspace{-0.5em}
+                \input{test/dbconfig/patch}
+                
+                \item Pengujian Fungsional \textit{Endpoint} DELETE /db-config/:id
+                \vspace{-0.5em}
+                \input{test/dbconfig/delete}
+                
+        \end{itemize}
+    
+        \item \textit{Endpoint Asset Static:} 
+            \begin{itemize}
+            
+                \item Pengujian Fungsional \textit{Endpoint} GET /asset-static
+                \vspace{-0.5em}
+                \input{test/asset-static/getall}
+                
+                \item Pengujian Fungsional \textit{Endpoint} GET /asset-static/:id
+                \vspace{-0.5em}
+                \input{test/asset-static/getone}
+                
+                \item Pengujian Fungsional \textit{Endpoint} POST /asset-static
+                \vspace{-0.5em}
+                \input{test/asset-static/post}
+                
+                \item Pengujian Fungsional \textit{Endpoint} PATCH /asset-static/:id
+                \vspace{-0.5em}
+                \input{test/asset-static/patch}
+                
+                \item Pengujian Fungsional \textit{Endpoint} DELETE /asset-static/:id
+                \vspace{-0.5em}
+                \input{test/asset-static/delete}
+                
+            \end{itemize}
+    
+        \item \textit{Endpoint Asset Dynamic:} 
+            \begin{itemize}
+            
+                \item Pengujian Fungsional \textit{Endpoint} GET /asset-dynamic
+                \vspace{-0.5em}
+                \input{test/asset-dynamic/getall}
+                
+                \item Pengujian Fungsional \textit{Endpoint} GET /asset-dynamic/:id
+                \vspace{-0.5em}
+                \input{test/asset-dynamic/getone}
+                
+                \item Pengujian Fungsional \textit{Endpoint} POST /asset-dynamic
+                \vspace{-0.5em}
+                \input{test/asset-dynamic/post}
+                
+                \item Pengujian Fungsional \textit{Endpoint} PATCH /asset-dynamic/:id
+                \vspace{-0.5em}
+                \input{test/asset-dynamic/patch}
+                
+                \item Pengujian Fungsional \textit{Endpoint} DELETE /asset-dynamic/:id
+                \vspace{-0.5em}
+                \input{test/asset-dynamic/delete}
+                
+            \end{itemize}
+    
+        \item \textit{Endpoint Job:} 
+            \begin{itemize}
+            
+                \item Pengujian Fungsional \textit{Endpoint} GET /job
+                \vspace{-0.5em}
+                \input{test/job/getall}
+                
+                \item Pengujian Fungsional \textit{Endpoint} GET /job/:id
+                \vspace{-0.5em}
+                \input{test/job/getone}
+                
+                \item Pengujian Fungsional \textit{Endpoint} POST /job
+                \vspace{-0.5em}
+                \input{test/job/post}
+                
+                \item Pengujian Fungsional \textit{Endpoint} PATCH /job/:id
+                \vspace{-0.5em}
+                \input{test/job/patch}
+                
+                \item Pengujian Fungsional \textit{Endpoint} DELETE /job/:id
+                \vspace{-0.5em}
+                \input{test/job/delete}
+                
+            \end{itemize}
+    
+        \item \textit{Endpoint Generate:} 
+            \begin{itemize}
+            
+                \item Pengujian Fungsional \textit{Endpoint} POST /generate
+                \vspace{-0.5em}
+                \input{test/generate/post}
+                
+            \end{itemize}
+    \end{enumerate}
+\end{enumerate}
+

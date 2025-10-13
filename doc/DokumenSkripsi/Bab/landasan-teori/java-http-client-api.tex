@@ -39,7 +39,7 @@ Selain \textit{static method}, kelas \texttt{HttpClient} juga menyediakan sejuml
 
 Kelas \texttt{HttpRequest} merepresentasikan sebuah \textit{request} HTTP yang akan dikirim menggunakan \texttt{HttpClient}. Objek dari kelas ini bersifat \textit{immutable}, sehingga setiap konfigurasi harus ditentukan terlebih dahulu melalui \texttt{HttpRequest.Builder} sebelum \textit{request} dibangun. Setelah dibuat, konfigurasi sebuah \texttt{HttpRequest} tidak dapat diubah lagi.
 
-Untuk membangun sebuah \texttt{HttpRequest}, dapat digunakan \textit{static method} \texttt{newBuilder} yang menghasilkan objek \texttt{HttpRequest.Builder}. Pada builder ini tersedia sejumlah \textit{method} yang digunakan untuk menetapkan konfigurasi permintaan:
+Untuk membangun sebuah \texttt{HttpRequest}, dapat digunakan \textit{static method} \texttt{newBuilder} yang menghasilkan objek \texttt{HttpRequest.Builder}. Pada \textit{builder} ini tersedia sejumlah \textit{method} yang digunakan untuk menetapkan konfigurasi permintaan:
 
 \begin{itemize}
     \item \texttt{uri}\\
@@ -58,7 +58,7 @@ Untuk membangun sebuah \texttt{HttpRequest}, dapat digunakan \textit{static meth
     \textit{Method} ini mengatur apakah \textit{request} menggunakan mekanisme \textit{Expect: 100-continue}. Jika diset true, client akan mengirim \textit{header} terlebih dahulu dan menunggu konfirmasi dari server sebelum mengirim isi \textit{request body}. Mekanisme ini berguna untuk \textit{request} dengan \textit{request body} berukuran besar.
     
     \item \texttt{GET}, \texttt{POST}, \texttt{PUT}, \texttt{DELETE}, dan \texttt{method}\\
-    \textit{Methods} ini menentukan jenis operasi HTTP yang akan dilakukan. \texttt{GET} dan \texttt{DELETE} tidak menyertakan \textit{request body}, sementara \texttt{POST} dan \texttt{PUT} membutuhkan objek \texttt{HttpRequest.BodyPublisher} untuk mendefinisikan data yang akan dikirim melalui \textit{request body}. Melalui objek \texttt{HttpRequest.BodyPublisher}, . \textit{Method} generik \texttt{method} memungkinkan penentuan jenis operasi lain seperti PATCH dan HEAD.
+    \textit{Methods} ini menentukan jenis operasi HTTP yang akan dilakukan. \texttt{GET} dan \texttt{DELETE} tidak menyertakan \textit{request body}, sementara \texttt{POST} dan \texttt{PUT} membutuhkan objek \texttt{BodyPublisher} untuk mendefinisikan data yang akan dikirim melalui \textit{request body}. \textit{Method} generik \texttt{method} memungkinkan penentuan jenis operasi lain seperti PATCH dan HEAD.
 
     
     \item \texttt{build}\\
@@ -111,10 +111,10 @@ Beberapa \textit{method} penting yang tersedia pada \texttt{HttpHeaders} antara 
 
 \begin{itemize}
     \item \texttt{firstValue}\\
-    Mengembalikan nilai pertama dari \textit{header} dengan nama tertentu dalam bentuk \texttt{Optional<String>}. \textit{Method} ini berguna ketika hanya satu nilai yang relevan dari sebuah \textit{header} yang mungkin memiliki banyak nilai, misalnya \texttt{Content-Type}.
+    Mengembalikan nilai pertama dari \textit{header} dengan nama tertentu dalam bentuk \textit{string}. \textit{Method} ini berguna ketika hanya satu nilai yang relevan dari sebuah \textit{header} yang mungkin memiliki banyak nilai.
     
     \item \texttt{allValues}\\
-    Mengembalikan seluruh nilai dari \textit{header} dengan nama tertentu dalam bentuk daftar (\texttt{List<String>}). \textit{Method} ini digunakan ketika sebuah \textit{header} dapat berisi lebih dari satu nilai, misalnya \texttt{Set-Cookie}.
+    Mengembalikan seluruh nilai dari \textit{header} dengan nama tertentu dalam bentuk daftar. \textit{Method} ini digunakan ketika sebuah \textit{header} dapat berisi lebih dari satu nilai.
     
     \item \texttt{map}\\
     Mengembalikan seluruh isi \textit{header} dalam bentuk struktur \texttt{Map<String, List<String>>}, dengan setiap kunci berupa nama \textit{header} dan nilainya berupa daftar nilai terkait. Dengan cara ini, semua \textit{header} dan nilainya dapat diakses secara langsung.
@@ -127,15 +127,6 @@ Beberapa \textit{method} penting yang tersedia pada \texttt{HttpHeaders} antara 
 Kode~\ref{lst:httpclient-example} menunjukkan contoh penggunaan Java HTTP Client API untuk melakukan permintaan HTTP ke sebuah alamat web dan menampilkan hasil tanggapannya. Kode ini ditulis untuk menggambarkan bagaimana kelas-kelas utama yang telah dijelaskan sebelumnya, yaitu \texttt{HttpClient}, \texttt{HttpRequest}, \texttt{HttpResponse}, dan \texttt{HttpHeaders}, digunakan secara bersama-sama dalam sebuah program nyata. Hasil eksekusi dari kode ini berupa informasi \textit{status code}, daftar \textit{header}, serta isi \textit{response body} yang diterima dari server tujuan.
 
 \begin{lstlisting}[language=Java, caption={Contoh penggunaan Java HTTP Client API}, label={lst:httpclient-example}]
-import java.net.URI;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
-import java.net.http.HttpHeaders;
-import java.time.Duration;
-import java.util.List;
-import java.util.Map;
-
 public class HttpClientExample {
     public static void main(String[] args) throws Exception {
         // Membangun HttpClient dengan konfigurasi yang relevan
@@ -152,12 +143,10 @@ public class HttpClientExample {
                 .GET()
                 .build();
 
-        // Menjalankan request secara sinkron dan membaca response sebagai String
         HttpResponse<String> response = client.send(
                 request, HttpResponse.BodyHandlers.ofString()
         );
 
-        // Mengakses status code, seluruh header (key -> values), dan body response
         System.out.println("Status Code : " + response.statusCode());
 
         HttpHeaders headers = response.headers();

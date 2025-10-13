@@ -1,0 +1,26 @@
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{0.5cm}|p{3cm}|p{5cm}|p{5cm}|p{1.5cm}|}
+        \hline
+        \rowcolor[HTML]{DAE8FC} 
+        \textbf{No} & \textbf{Skenario} & \textbf{Kasus Uji} & \textbf{Hasil yang Diharapkan} & \textbf{Hasil} \\ \hline
+        1 & Mengirim data valid & 
+        asset\_static\_id: 1 \newline placeholder\_values: \{"KEY": "value"\} & 
+        Status code 201 Created, berhasil membuat aset dinamis baru & 
+        Berhasil \\ \hline
+        2 & Mengirim data tanpa \textit{asset\_static\_id} & 
+        placeholder\_values: \{"KEY": "value"\} & 
+        Status code 400 Bad Request, gagal karena \textit{asset\_static\_id} wajib dikirimkan & 
+        Berhasil \\ \hline
+        3 & Mengirim data tanpa \textit{placeholder\_values} & 
+        asset\_static\_id: 1 & 
+        Status code 400 Bad Request, gagal karena \textit{placeholder\_values} wajib dikirimkan & 
+        Berhasil \\ \hline
+        4 & Mengirim data dengan tipe data atribut tidak valid & 
+        asset\_static\_id: "string" \newline placeholder\_values: \{"KEY": "value"\} & 
+        Status code 400 Bad Request, gagal karena tipe data atribut tidak valid & 
+        Berhasil \\ \hline
+    \end{tabular}
+    \caption{Pengujian Fungsional Endpoint POST /asset-dynamic}
+    \label{tab:asset_dynamic_post_testing}
+\end{table}

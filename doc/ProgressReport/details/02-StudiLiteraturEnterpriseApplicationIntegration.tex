@@ -1,0 +1,83 @@
+Berdasarkan hasil studi literatur, berikut hal yang didapatkan :
+\begin{enumerate}[label*=\arabic*.,ref=\arabic*]
+    \item Konsep Dasar \\
+    \textit{Enterprise Application Integration} (EAI) sebuah teknologi yang bertujuan untuk menghubungkan berbagai aplikasi yang digunakan dalam suatu organisasi atau perusahaan, sehingga informasi dapat dipertukarkan secara lancar. EAI memiliki beberapa tujuan yaitu untuk sinkronisasi data, otomasi proses bisnis dan fleksibilitas sistem. Beberapa elemen utama di dalam EAI adalah \textit{middleware}, adaptor, dan model data yang terintegrasi. Salah satu keuntungan penggunaan EAI adalah pengurangan redundansi data, di mana data tidak perlu dimasukkan atau disimpan ulang dalam berbagai sistem, dan risiko kesalahan. 
+
+    EAI merupakan solusi strategis yang memungkinkan perusahaan untuk memanfaatkan berbagai aplikasi yang sudah ada secara optimal. Penggunaan EAI dapat meningkatkan kolaborasi antarsistem dan memungkinkan pengambilan keputusan yang lebih baik melalui integrasi data serta proses bisnis. 
+
+    \item Pendekatan \\
+    Berdasarkan buku "\textit{Enterprise Application Integration: A Wiley Tech Brief}", pendekatan integrasi pada EAI adalah sebagai berikut:
+    \begin{enumerate}[label=\alph*.]
+        \item Point-to-Point Integration \\
+        Pendekatan ini menghubungkan aplikasi satu dengan yang lain secara langsung. Berdasarkan buku "\textit{Enterprise Integration Patterns}" oleh Gregor Hohpe, \textit{point-to-point} adalah solusi sederhana yang biasanya digunakan pada tahap awal integrasi.
+        \item Hub-and-Spoke Integration \\
+        Pendekatan ini menggunakan hub sebagai pusat untuk mengatur komunikasi antara aplikasi. Menurut artikel "\textit{Middleware and Integration Patterns}" dari TechJournal (2020), hub bertugas menangani pengolahan data, transformasi, dan pengelolaan alur kerja.
+        \item Enterprise Service Bus (ESB) \\
+        Pendekatan ini menggunakan bus terpusat yang berfungsi sebagai platform integrasi. Berdasarkan buku "\textit{Service-Oriented Architecture with ESB}" oleh David Chappell, ESB adalah solusi yang ideal untuk sistem besar dengan banyak aplikasi lainnya.
+        \item Service-Oriented Architecture (SOA)\\ 
+        SOA adalah pendekatan integrasi yang berfokus pada layanan. Setiap aplikasi menyediakan layanan yang dapat diakses melalui protokol standar seperti SOAP atau REST. Berdasarkan studi pustaka dalam SOA "\textit{Principles of Service Design}" oleh Thomas Erl, SOA memungkinkan aplikasi untuk berkomunikasi secara independen tanpa tergantung pada platform atau teknologi.
+    \end{enumerate}
+
+    \item Teknologi dan Alat EAI
+        \begin{enumerate}[label=\alph*.]
+            \item Middleware\\
+            \textit{Middleware} adalah komponen kunci dalam implementasi EAI yang bertindak sebagai perantara untuk menghubungkan aplikasi yang berbeda. Berdasarkan buku "\textit{Middleware Architecture for Enterprise Integration}" oleh Fabio Casati, \textit{middleware} menyediakan layanan seperti komunikasi antar aplikasi, transformasi data, pengelolaan transaksi, dan pengaturan orkestrasi proses bisnis.
+
+            Di bawah ini merupakan beberapa contoh \textit{middleware}, yaitu:
+            \begin{enumerate}[label=\alph*.]
+                \item IBM WebSphere\\ 
+               \textit{Middleware} yang mendukung integrasi kompleks, dengan fitur seperti orkestrasi proses bisnis dan keamanan tingkat tinggi.
+                \item Oracle Fusion Middleware\\
+                Solusi \textit{middleware} yang memungkinkan integrasi aplikasi perusahaan dengan kemampuan analitik data real-time.
+                \item Apache Camel \\ 
+                Framework open-source berbasis Java yang memungkinkan integrasi menggunakan pola-pola seperti \textit{routing} dan pengubahan data.
+            \end{enumerate}
+            
+            \textit{Middleware} membantu mengurangi kompleksitas integrasi dan menyediakan fleksibilitas tinggi untuk mendukung berbagai protokol komunikasi.
+
+            \item Standar Komunikasi \\
+            Standar komunikasi digunakan untuk memastikan aplikasi yang berbeda dapat bertukar informasi dengan cara yang konsisten dan dapat diandalkan. Berdasarkan studi pustaka dari artikel "\textit{Standardized Communication in EAI di International Journal of Systems Integration}", standar komunikasi yang sering digunakan adalah:
+            \begin{enumerate}[label=\alph*.]
+                \item SOAP (Simple Object Access Protocol) \\ 
+                Protokol berbasis XML untuk pertukaran informasi dalam jaringan yang terdistribusi. Cocok untuk sistem yang membutuhkan tingkat keamanan tinggi.
+                \item REST (Representational State Transfer) \\ 
+                Arsitektur yang lebih ringan daripada SOAP, menggunakan HTTP untuk komunikasi. Banyak digunakan dalam aplikasi berbasis web modern.
+                \item gRPC \\ 
+                Framework RPC (Remote Procedure Call) modern yang menggunakan protokol Protobuf. Mendukung komunikasi cepat dalam aplikasi microservices.
+            \end{enumerate}
+            
+            \item Format Data \\
+            Format data menentukan bagaimana informasi diwakili saat ditransfer antar aplikasi. Format yang digunakan harus fleksibel dan dapat dibaca oleh sistem yang berbeda. Berdasarkan buku "\textit{Data Integration and Interoperability}" oleh Michael Gorman, format data utama dalam EAI meliputi:
+            \begin{enumerate}[label=\alph*.]
+                \item XML (eXtensible Markup Language) \\ 
+                Format berbasis teks yang sangat fleksibel tetapi cukup berat dalam pemrosesan. Sering digunakan dalam sistem lama.
+                \item JSON (JavaScript Object Notation) \\ 
+                Format yang ringan dan lebih cepat dibanding XML. Banyak digunakan dalam aplikasi modern, terutama yang berbasis REST API.
+                \item CSV (Comma-Separated Values) \\
+                Format sederhana untuk menyimpan data dalam bentuk tabel. Cocok untuk integrasi data volume besar dengan sistem yang tidak mendukung format kompleks.
+            \end{enumerate}
+            
+            \item Protokol Integrasi \\
+            Protokol integrasi menentukan bagaimana data dikirimkan antara aplikasi. Berdasarkan penelitian dalam artikel "\textit{Protocol Design for System Integration}" di \textit{ACM Digital Library}, protokol yang umum digunakan dalam EAI adalah:
+            \begin{enumerate}[label=\alph*.]
+                \item HTTP (HyperText Transfer Protocol) \\ 
+                Protokol utama untuk aplikasi berbasis web. Mudah digunakan tetapi memiliki keterbatasan dalam mendukung komunikasi real-time.
+                \item MQTT (Message Queuing Telemetry Transport) \\ 
+                Protokol ringan untuk komunikasi real-time, sering digunakan dalam IoT.
+                \item AMQP (Advanced Message Queuing Protocol) \\ 
+                Protokol untuk pengiriman pesan yang andal dan aman. Sering digunakan dalam integrasi berbasis ESB.
+            \end{enumerate}
+
+            \item Keamanan \\
+            Keamanan adalah aspek penting dalam EAI untuk melindungi data dan sistem dari ancaman eksternal maupun internal. Berdasarkan buku "\textit{Security in Middleware-based Systems}" oleh Thomas Erl, pendekatan keamanan yang digunakan dalam EAI meliputi:
+            \begin{enumerate}[label=\alph*.]
+                \item OAuth 2.0 \\ 
+                Standar otorisasi yang memungkinkan aplikasi untuk mengakses sumber daya secara aman atas nama pengguna. Digunakan untuk autentikasi dalam sistem modern.
+                \item SSL/TLS (Secure Sockets Layer/Transport Layer Security) \\ 
+                Protokol untuk mengenkripsi komunikasi antara aplikasi. Memastikan kerahasiaan dan integritas data.
+                \item Kontrol Akses \\ 
+                Menerapkan kebijakan otorisasi untuk memastikan hanya pengguna atau aplikasi yang berhak dapat mengakses sumber daya tertentu.
+            \end{enumerate}
+    \end{enumerate}
+
+\end{enumerate}

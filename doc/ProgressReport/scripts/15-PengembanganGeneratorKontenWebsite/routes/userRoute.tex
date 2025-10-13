@@ -1,0 +1,17 @@
+\begin{lstlisting}[language=Javascript,caption={User Route}]
+const express = require("express");
+const { UserController } = require("../controllers/UserController");
+const { Authorization } = require("../middlewares/Authorization");
+const router = express.Router();
+
+router.post("/signup", Authorization.decryption(), UserController.signup);
+router.post("/signin", UserController.signin);
+router.delete("/signout", UserController.signout);
+
+router.get("/", Authorization.decryption(), UserController.getAll);
+router.get("/:id", Authorization.decryption(), UserController.getOne);
+router.patch("/:id", Authorization.decryption(), UserController.patch);
+router.delete("/:id", Authorization.decryption(), UserController.delete);
+
+module.exports = router;
+\end{lstlisting}

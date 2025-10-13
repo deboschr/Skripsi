@@ -1,0 +1,5 @@
+\begin{lstlisting}[language=Javascript,caption={Penjadwalan dengan Pola Cron}]
+const job = schedule.scheduleJob('cronPatternJob', '*/10 * * * * *', () => {
+    console.log('Job executed based on cron pattern at', new Date());
+});
+\end{lstlisting}

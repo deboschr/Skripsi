@@ -1,0 +1,6 @@
+\begin{lstlisting}[language=Javascript,caption={Penjadwalan dengan Waktu Spesifik}]
+const date = new Date(2024, 11, 9, 10, 0, 0); // 9 Desember 2024, pukul 10:00:00
+const job = schedule.scheduleJob('specificTimeJob', date, () => {
+    console.log('Job executed at a spesific time:', new Date());
+});
+\end{lstlisting}

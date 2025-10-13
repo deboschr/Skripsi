@@ -1,0 +1,127 @@
+Berdasarkan hasil studi literatur yang sudah dilakukan dari sumber sebagai berikut :
+    \begin{itemize}
+        \item WWW: past, present, and future
+        \item What Is a Web Application? Web Application Design Handbook
+        \item Effective Java Programming Language Guide
+        \item PHP and MySQL Web Development
+        \item The Go Programming Language
+        \item Automate the Boring Stuff with Python: Practical Programming for Total Beginners
+        \item Enterprise Application Integration: A Wiley Tech Brief
+        \item Designing Web APIs: Building APIs That Developers Love
+        \item OAuth 2 in Action
+    \end{itemize}
+Didapatkan hasil berikut ini :
+\begin{enumerate}[label*=\arabic*.,ref=\arabic*]
+    \item Konsep Dasar\\
+        Web, atau yang secara formal dikenal sebagai \textit{World Wide Web} (WWW) didefinisikan sebagai semesta informasi yang dapat diakses melalui jaringan global. WWW sebagian besar dihuni oleh teks, gambar, dan animasi yang saling terkait, dengan sesekali menampilkan suara, video, dan dunia tiga dimensi. Web dirancang sebagai sebuah ruang di mana orang dapat berkolaborasi dalam sebuah proyek.
+        
+        Aplikasi memiliki fokus pada interaksi pengguna untuk menyelesaikan tugas tertentu. Aplikasi ini dapat berupa sistem manajemen data, alat analisis, atau platform kolaborasi. Aplikasi ini dirancang untuk memberikan pengalaman yang efisien dan sering kali dilengkapi dengan fitur seperti keamanan, manajemen sesi, dan integrasi dengan sistem lain.
+
+        Aplikasi berbasis web dirancang untuk lebih dari sekedar menyediakan informasi seperti halaman web. Memungkinkan pengguna untuk melakukan input data, bertransaksi, atau mengakses layanan tertentu secara \textit{online}. Aplikasi berbasis web biasanya membutuhkan interaksi berkelanjutan antara pengguna dan server untuk menyimpan atau memproses data. Aplikasi berbasis web dirancang untuk mendukung berbagai kebutuhan bisnis, mulai dari sistem manajemen internal hingga \textit{platform e-commerce}.
+        
+    \item Komponen dan Teknologi\\
+        Aplikasi berbasis web terdiri dari berbagai komponen yang bekerja sama untuk memberikan fungsionalitas dan pengalaman yang optimal kepada pengguna. Setiap komponen memiliki tanggung jawab tertentu, mulai dari antarmuka pengguna hingga pengolahan data di \textit{back-end}.
+
+        % Jelaskan apa itu framework dan library disini
+
+        Berikut adalah komponen dan teknologi pada aplikasi berbasis web:
+
+        \begin{enumerate}[label=\alph*.]
+            \item Front-End (Client-Side)\\
+                \textit{Front-end} adalah bagian aplikasi yang langsung berinteraksi dengan pengguna. Ini mencakup semua elemen visual dan antarmuka pengguna yang dapat dilihat dan digunakan oleh pengguna.
+
+                Teknologi yang digunakan:
+                \begin{itemize}
+                    \item HTML\\
+                        \textit{HyperText Markup Language} (HTML) adalah bahasa \textit{markup} standar untuk membuat dan menyusun halaman web serta aplikasi web. Elemen-elemen HTML memungkinkan pengembang untuk menentukan berbagai komponen dalam sebuah halaman, seperti teks, gambar, tabel, dan formulir. Dalam konteks aplikasi berbasis web, HTML sering menjadi fondasi untuk menampilkan antarmuka pengguna yang kemudian diperluas dengan CSS dan JavaScript. 
+                    \item CSS\\
+                        \textit{Cascading Style Sheet} (CSS) bertanggung jawab atas tampilan dan nuansa visual halaman web. Ini memungkinkan pengembang untuk menerapkan gaya seragam untuk elemen yang ditulis dalam HTML, mengatur tata letak, warna, tulisan, dan aspek visual lainnya. Dalam aplikasi web, CSS memungkinkan antarmuka menjadi lebih menarik dan responsif terhadap berbagai perangkat, termasuk komputer desktop dan perangkat seluler. 
+                    \item JavaScript\\
+                        JavaScript adalah bahasa pemrograman yang digunakan untuk membuat halaman web menjadi interaktif. Berbeda dengan HTML yang statis dan CSS yang fokus pada presentasi, JavaScript memungkinkan implementasi fitur-fitur dinamis pada halaman web yang dapat berinteraksi dengan pengguna, mengendalikan \textit{browser}, dan secara dinamis mengubah dokumen yang telah ditampilkan. Misalnya, JavaScript dapat digunakan untuk menambahkan animasi, memuat konten baru tanpa harus memuat ulang halaman, mengambil data dari server secara asinkron (AJAX), dan mengolah formulir. JavaScript juga sangat penting dalam pengembangan \textit{single-page application} (SPA), di mana pengguna dapat menikmati pengalaman web yang mulus tanpa pemuatan halaman yang terputus-putus.
+                \end{itemize}
+
+                Contoh penggunakan HTML, CSS, dan JavaScript secara bersamaan:
+                \input{scripts/01-StudiLiteraturPengembanganAplikasiWeb/htmlcssjs}
+                
+                Selain menggunakan HTML, CSS dan JavaScript, pengembangan \textit{client-side} juga dapat menggunakan \textit{framework} seperti React dan Angular.
+                
+            \item Back-End (Server-Side)\\
+                \textit{Back-end} adalah komponen yang berperan untuk menangani logika bisnis aplikasi dan proses di balik layar yang tidak terlihat oleh pengguna.
+
+                Teknologi yang digunakan berdasarkan bahasa pemrograman sebagai berikut:
+                \begin{itemize}
+                    \item JavaScript\\
+                        JavaScript secara tradisional digunakan di sisi klien untuk membuat halaman web interaktif, tetapi dengan hadirnya Node.js, penggunaannya kini meluas ke sisi server. Node.js adalah \textit{runtime} JavaScript berbasis V8 (engine JavaScript Google Chrome) yang memungkinkan eksekusi kode secara cepat di luar \textit{browser}. Dirancang untuk membangun aplikasi jaringan yang skalabel, Node.js menggunakan model \textit{non-blocking I/O} dan asinkronus.
+
+                        Express.js, sebagai \textit{framework} untuk Node.js, mempermudah pengelolaan rute, permintaan, dan tanggapan dalam aplikasi web. Dengan pendekatan minimalis, Express.js memungkinkan pengaturan \textit{middleware} dan pengelolaan HTTP tanpa banyak abstraksi tambahan, mendukung pengembang dalam membangun aplikasi secara lebih fleksibel.
+                    \item Java\\
+                        % Penjelasan tentang Java sebagai server-side, spring boot
+                        Java merupakan sebuah bahasa pemrograman yang fleksibel dan produktif, dengan fokus pada kualitas kode. Java dapat digunakan untuk membangun komponen perangkat lunak yang dapat digunakan kembali melalui pendekatan API. Di dalam Java, terdapat Spring Boot yang mendukung pengaturan otomatis, manajemen dependensi, dan integrasi dengan berbagai pustaka serta layanan. Spring Boot dirancang untuk mempermudah pengembangan aplikasi berskala besar dengan pendekatan minimal konfigurasi. 
+                    \item PHP\\
+                        % Penjelasan tentang PHP sebagai server-side, laravel
+                        PHP merupakan sebuah bahasa pemrograman sisi server yang dirancang khusus untuk pengembangan web. PHP memungkinkan integrasi kode dalam halaman HTML untuk menghasilkan konten dinamis. Kini merupakan salah satu bahasa pemrograman terpopuler di dunia, terutama karena kemudahan penggunaannya, kinerja tingga, dan sifatnya yang \textit{open source}. Sebagai salah satu contoh \textit{framework} PHP yang paling populer yaitu Laravel. Laravel dirancang untuk mempermudah pengembangan aplikasi web dengan menyediakan fitur seperti routing, \textit{middleware}, serta alat untuk pengelolaan database dan autentikasi. 
+                    \item Go\\
+                        % Penjelasan tentang Go sebagai server-side dan frameworknya
+                        Go merupakan sebuah bahasa pemrograman yang andal dan dirancang untuk membangun perangkat lunak modern, terutama di sisi server. Go menonjol karena fitur-fitur seperti pengelolaan memori otomatis, sistem tipe yang sederhana, serta kemampuan bawaan untuk pemrograman konkuren. Salah satu \textit{framework} populer dalam ekosistem Go adalah Gin. Gin mendukung pengembangan aplikasi web dengan pendekatan minimalis dan performa tinggi. Gin mempermudah pengelolaan routing, \textit{middleware}, serta pengelolaan permintaan HTTP dengan API yang sederhana namun fleksibel. 
+                    \item Python\\
+                        % Penjelasan tentang Python sebagai server-side dan frameworknya
+                        Python didefinisikan sebagai bahasa pemrograman serbaguna yang mudah dipelajari dan digunakan. Python terkenal dengan sintaksisnya yang sederhana dan pustaka yang kaya, menjadikannya pilihan utama untuk berbagai aplikasi, termasuk pemrograman server-side, otomatisasi tugas, analisis data, dan pengembangan web.
+                        \textit{Framework} populer untuk pengembangan web menggunakan Python adalah Django dan Flask. Django adalah\textit{ framework} berbasis Python yang bersifat penuh fitur (full-stack), mendukung skalabilitas, keamanan, dan efisiensi untuk aplikasi web besar. Flask, di sisi lain, lebih minimalis, cocok untuk proyek yang membutuhkan fleksibilitas tinggi dan kontrol penuh atas struktur aplikasi.
+                \end{itemize}
+            
+            \item Basis Data\\
+                Basis data bertugas untuk menyimpan dan mengelola data aplikasi secara sistematis agar dapat diakses dengan cepat dan aman.
+                
+                Teknologi yang digunakan:
+                \begin{itemize}
+                    \item SQL\\
+                        % Penjelasan tentang SQL dan contoh databasenya (Mysql, PostgreSQL)
+                        SQL merupakan sebuah \textit{Structured Query Language}, yaitu bahasa standar untuk mengakses dan mengelola sistem manajemen basis data relasional (RDBMS). 
+                        MySQL merupakan salah satu basis data yang digunakan untuk menyimpan data. MySQL adalah sistem manajemen basis data relasional (RDBMS) yang cepat, andal, dan mendukung banyak pengguna secara bersamaan. PostgreSQL merupakan sistem manajemen basis data relasional \textit{open-source} yang dikenal karena mendukung standar SQL dan menyediakan banyak fitur yang biasanya ditemukan dalam sistem basis data komersial. PostgreSQL sering digunakan dalam aplikasi web yang membutuhkan skalabilitas dan integritas data yang tinggi.
+                    \item \textit{NoSQL}\\
+                        % Penjelasan tentang NoSQL dan contoh databasenya (MongoDB)
+                        \textit{NoSQL} merujuk pada basis data non-relasional yang dirancang untuk menangani data besar dengan struktur fleksibel seperti dokumen, graf, atau key-value store. MongoDB adalah salah satu sistem basis data \textit{NoSQL} yang paling populer. Penggunaan MongoDB memudahkan pengembang untuk menyimpan dan mengambil data dengan struktur yang fleksibel dan menjadikannya ideal untuk aplikasi yang berkembang cepat. 
+                \end{itemize}
+                
+        \end{enumerate}
+
+    \item Arsitektur\\
+        Arsitektur Aplikasi Berbasis Web menggambarkan cara komponen \textit{front-end}, \textit{back-end}, dan basis data yang saling berinteraksi untuk memberikan layanan kepada pengguna. Pemilihan arsitektur sangat bergantung pada kebutuhan aplikasi, skala, kompleksitas, dan sumber daya yang tersedia. Setiap jenis arsitektur memiliki keunggulan dan kekurangan, sehingga perlu dipilih sesuai dengan tujuan aplikasi yang akan dikembangkan. Berikut adalah beberapa jenis arsitektur pada aplikasi berbasis web:
+
+        \begin{enumerate}[label=\alph*.]
+            \item Monolithic Architecture\\
+                Arsitektur ini menyusun aplikasi sebagai satu kesatuan yang terintegrasi penuh, di mana semua komponen termasuk antarmuka pengguna, logika bisnis, dan akses data berada dalam satu unit aplikasi.
+                
+            \item Microservice Architecture\\
+                Dalam arsitektur ini, aplikasi dipecah menjadi layanan-layanan kecil yang independen, di mana setiap layanan bertanggung jawab atas fungsi tertentu dan berkomunikasi melalui API.
+            
+            \item Serverless Architecture\\
+                Serverless architecture adalah pendekatan di mana pengembang tidak perlu mengelola server secara langsung. Aplikasi dijalankan pada infrastruktur \textit{cloud}, dan sumber daya diberikan secara otomatis berdasarkan permintaan.
+            
+            \item Three-Tier Architecture\\
+                Arsitektur ini memisahkan aplikasi menjadi tiga lapisan utama:
+
+                \begin{itemize}
+                    \item Lapisan Presentasi (Presentation Layer): Menangani antarmuka pengguna (frontend).
+                    \item Lapisan Logika Bisnis (Business Logic Layer): Mengelola aturan dan proses aplikasi.
+                    \item Lapisan Data (Data Layer): Berisi dan mengelola data aplikasi.
+                \end{itemize}
+        \end{enumerate}
+        
+    \item Pendekatan Pengembangan\\
+        Pendekatan pengembangan aplikasi web merujuk pada metode atau teknik yang digunakan untuk merender halaman web dan menyajikannya kepada pengguna. Pilihan pendekatan sangat bergantung pada kebutuhan aplikasi, performa yang diinginkan, dan pengalaman pengguna yang diharapkan.
+        \begin{enumerate}[label=\alph*.]
+            \item Server-Side Rendering (SSR)\\
+                Server-Side Rendering (SSR) adalah pendekatan di mana halaman web diproses sepenuhnya di server, kemudian dikirimkan kepada \textit{browser} dalam bentuk HTML yang sudah siap ditampilkan.
+                
+            \item Client-Side Rendering (CSR)\\
+                Client-Side Rendering (CSR) adalah pendekatan di mana halaman web di render di sisi \textit{browser} menggunakan JavaScript. Server hanya mengirimkan dokumen HTML kosong dan JavaScript yang diperlukan untuk membangun halaman.
+            
+            \item Static Site Generation (SSG)\\
+                Static Site Generation (SSG) adalah pendekatan dimana halaman web dihasilkan secara statis selama proses build dan disajikan langsung dari server atau CDN. Halaman ini tidak berubah kecuali dilakukan rebuild.
+                
+            \item Progressive Web Apps (PWA)\\
+                Progressive Web Apps (PWA) adalah aplikasi web yang dirancang untuk memberikan pengalaman pengguna yang mirip dengan aplikasi native di perangkat mobile, tetapi tetap menggunakan teknologi web. PWA memanfaatkan fitur \textit{browser} modern untuk bekerja secara offline, memberikan notifikasi, dan memiliki akses ke perangkat keras.
+                
+        \end{enumerate}
+\end{enumerate}

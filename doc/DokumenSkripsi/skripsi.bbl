@@ -1,0 +1,24 @@
+\begin{thebibliography}{99}
+
+\bibitem{RFC9110}
+Fielding, R.~T., Nottingham, M., dan Reschke, J. (2022) Http semantics. RFC
+  9110. RFC Editor, \url{http://www.rfc-editor.org}.
+
+\bibitem{RFC3986}
+Berners-Lee, T., Fielding, R.~T., dan Masinter, L. (2005) Uniform resource
+  identifier (uri): Generic syntax. RFC  3986. RFC Editor,
+  \url{http://www.rfc-editor.org}.
+
+\bibitem{powell:10:htmlcss}
+Powell, T.~A. (2010) {\em HTML \& CSS: The Complete Reference},  5th edition.
+  McGraw-Hill,  New York.
+
+\bibitem{liu:11:webdatamining}
+Liu, B. (2011) {\em Web Data Mining: Exploring Hyperlinks, Contents, and Usage
+  Data},  2nd edition. Springer,  Berlin, Heidelberg.
+
+\bibitem{sharan:22:learnjavafx17}
+Sharan, K. dan Späth, P. (2022) {\em Learn JavaFX~17: Building User Experience
+  and Interfaces with Java},  2rd edition. Apress,  Montgomery, AL, USA.
+
+\end{thebibliography}

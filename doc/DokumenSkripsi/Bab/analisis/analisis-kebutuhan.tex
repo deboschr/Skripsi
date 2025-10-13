@@ -1,8 +1,71 @@
-
-
-
 Analisis masalah pada Subbab~\ref{sec:03-analisis-masalah}, serta analisis sistem serupa pada Subbab~\ref{sec:03-analisis-sistem-serupa}, menghasilkan gambaran mengenai fitur dan karakteristik yang harus dimiliki oleh sistem. Dari sini disusun kebutuhan fungsional yang menjelaskan layanan apa saja yang harus disediakan oleh sistem, serta kebutuhan non-fungsional yang berhubungan dengan kualitas, batasan teknis, dan kriteria pendukung lainnya.
 
+
+Gambaran umum dari kebutuhan sistem dapat divisualisasikan dalam bentuk diagram \textit{use case} sebagaimana ditunjukkan pada Gambar~\ref{fig:use-case-diagram}. Diagram tersebut memperlihatkan aktor utama yaitu pengguna yang berinteraksi langsung dengan perangkat lunak yang dikembangkan. Terdapat dua layanan inti yang dapat dilakukan pengguna, yaitu melakukan pemeriksaan tautan rusak pada sebuah situs web dan mengekspor hasil pemeriksaan ke dalam berkas eksternal. 
+
+
+\begin{enumerate}
+    \item \textbf{Memeriksa Tautan Rusak}\\  
+    Fitur ini digunakan untuk melakukan pemeriksaan terhadap seluruh tautan yang terdapat dalam sebuah situs web untuk mendeteksi tautan rusak (broken links).  
+    
+    \begin{itemize}
+    
+        \item Nama: Memeriksa Tautan Rusak
+        
+        \item Aktor: Pengguna
+        
+        \item Deskripsi: Memeriksa tautan rusak yang ada pada sebuah situs web.
+        
+        \item Kondisi awal: Aplikasi telah dijalankan dan pengguna berada pada halaman utama antarmuka.
+        
+        \item Kondisi akhir: Daftar tautan rusak ditampilkan di tabel hasil pemeriksaan.
+        
+        \item Skenario utama: Ditampilkan dalam tabel \ref{tab:skenario-01}
+        \begin{table}[h]
+            \centering
+            \caption{Skenario Memeriksa Tautan Rusak}
+            \vspace{6pt}
+            \begin{tabular}{|p{0.5cm} |p{6cm}| p{6cm}|}\hline
+                No & Aksi Aktor & Reaksi Sistem \\ \hline
+                1 & Pengguna memasukkan URL ke dalam kolom masukan dan menekan tombol \textit{Check}. & Sistem melakukan proses \textit{web crawling}, mengekstrak seluruh tautan yang ditemukan dan mengecek kode status HTTP dari setiap tautan. \\ \hline
+                2 & & Sistem menampilkan daftar tautan rusak yang ditemukan dan ringkasan dari proses pengecekan. \\ \hline
+            \end{tabular}
+            \label{tab:skenario-01}
+        \end{table}
+
+    \end{itemize}
+    
+
+    \item \textbf{Ekspor Hasil}\\
+    Fitur ini digunakan untuk mengekspor hasil pemeriksaan tautan rusak ke dalam berkas eksternal untuk keperluan dokumentasi atau analisis lebih lanjut.
+    \begin{itemize}
+        \item Nama: Ekspor Hasil
+        \item Aktor: Pengguna
+        \item Deskripsi: Ekspor hasil pemeriksaan tautan rusak ke berkas ekternal dalam format Excel.
+        \item Kondisi awal: Pemeriksaan tautan telah selesai dan hasilnya telah ditampilkan di tabel.
+        \item Kondisi akhir: Berkas hasil ekspor tersimpan di perangkat pengguna.
+        \item Skenario utama: Ditampilkan dalam tabel \ref{tab:skenario-02}
+        \begin{table}[h]
+            \centering
+            \caption{Skenario Ekspor Hasil}
+            \vspace{6pt}
+            \begin{tabular}{|p{0.5cm} |p{6cm}| p{6cm}|}\hline
+                No & Aksi Aktor & Reaksi Sistem \\ \hline
+                1 & Pengguna menekan tombol \textit{Export}. & Sistem membuka dialog penyimpanan berkas. \\ \hline
+                2 & Pengguna menentukan nama dan lokasi penyimpanan berkas. & Sistem memproses data hasil pemeriksaan menjadi format \texttt{.xlsx}. \\ \hline
+                3 & & Sistem menyimpan berkas hasil ekspor di lokasi yang telah dipilih pengguna. \\ \hline
+            \end{tabular}
+            \label{tab:skenario-02}
+        \end{table}
+    \end{itemize}
+\end{enumerate}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Gambar/030301-use-case-diagram.png}
+    \caption{Diagram \textit{use case} aplikasi}
+    \label{fig:use-case-diagram}
+\end{figure}
 
 \subsection{Kebutuhan Fungsional}
 \label{subsec:0303-kebutuhan-fungsional}
@@ -32,6 +95,9 @@ Kebutuhan fungsional berikut menggambarkan layanan inti yang harus disediakan ol
     \item \textbf{Ekspor hasil}\\
     Sistem dapat mengekspor hasil pemeriksaan ke dalam berkas Excel agar mudah disimpan, dibagikan, atau dianalisis lebih lanjut.
 \end{enumerate}
+
+
+
 
 
 \subsection{Kebutuhan Non-Fungsional}
@@ -65,3 +131,5 @@ Selain fungsi inti, sistem juga harus memenuhi sejumlah kebutuhan non-fungsional
     Setiap permintaan menyertakan identitas \texttt{User-Agent}. Sistem juga menyediakan pengaturan jeda permintaan untuk menjaga agar aktivitas pemeriksaan tidak membebani server.
 
 \end{enumerate}
+
+

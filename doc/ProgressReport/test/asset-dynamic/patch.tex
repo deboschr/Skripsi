@@ -1,0 +1,18 @@
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{0.5cm}|p{3cm}|p{5cm}|p{5cm}|p{1.5cm}|}
+        \hline
+        \rowcolor[HTML]{DAE8FC} 
+        \textbf{No} & \textbf{Skenario} & \textbf{Kasus Uji} & \textbf{Hasil yang Diharapkan} & \textbf{Hasil} \\ \hline
+        1 & Mengirim data valid untuk memperbarui aset dinamis & 
+        id: 1 \newline placeholder\_values: \{"KEY": "new\_value"\} & 
+        Status code 200 OK, berhasil memperbarui data aset dinamis & 
+        Berhasil \\ \hline
+        2 & Tidak mengirim data untuk diperbarui & 
+        Tidak ada body request & 
+        Status code 400 Bad Request, gagal karena tidak ada data yang diberikan untuk diperbarui & 
+        Berhasil \\ \hline
+    \end{tabular}
+    \caption{Pengujian Fungsional Endpoint PATCH /asset-dynamic/:id}
+    \label{tab:asset_dynamic_patch_testing}
+\end{table}

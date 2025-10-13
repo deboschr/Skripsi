@@ -1,0 +1,18 @@
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{0.5cm}|p{3cm}|p{5cm}|p{5cm}|p{1.5cm}|}
+        \hline
+        \rowcolor[HTML]{DAE8FC} 
+        \textbf{No} & \textbf{Skenario} & \textbf{Kasus Uji} & \textbf{Hasil yang Diharapkan} & \textbf{Hasil} \\ \hline
+        1 & Mengakses dengan \textit{id} valid & 
+        id: 1 & 
+        Status code 200 OK, mengembalikan data aset dinamis sesuai id & 
+        Berhasil \\ \hline
+        2 & Mengakses dengan \textit{id} yang tidak ditemukan & 
+        id: 999 & 
+        Status code 404 Not Found, gagal karena id tidak ditemukan & 
+        Berhasil \\ \hline
+    \end{tabular}
+    \caption{Pengujian Fungsional Endpoint GET /asset-dynamic/:id}
+    \label{tab:asset_dynamic_getone_testing}
+\end{table}

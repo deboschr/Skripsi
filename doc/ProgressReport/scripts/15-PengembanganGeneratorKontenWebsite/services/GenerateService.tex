@@ -1,0 +1,74 @@
+\begin{lstlisting}[language=Javascript,caption={Generate Website Service}]
+const { WebsiteRepository } = require("../repositories/WebsiteRepository");
+const fs = require("fs");
+const path = require("path");
+
+// Fungsi untuk mendekode Base64
+function decodeBase64(content) {
+	return Buffer.from(content, "base64").toString("utf-8");
+}
+
+class GenerateService {
+	static async generate(dataGenerate) {
+		try {
+			const findGenerate = await WebsiteRepository.readForGenerate(
+				dataGenerate
+			);
+
+			const basePath = path.resolve(
+				__dirname,
+				"..",
+				findGenerate.website.dir_path
+			);
+
+			await this.processAssets(findGenerate.assets, basePath);
+
+			return { success: true };
+		} catch (error) {
+			throw error;
+		}
+	}
+
+	static async processAssets(assets, basePath) {
+		for (const asset of assets) {
+			const assetPath = path.join(basePath, asset.name);
+
+			if (asset.type === "folder") {
+				// Buat folder jika belum ada
+				if (!fs.existsSync(assetPath)) {
+					fs.mkdirSync(assetPath, { recursive: true });
+					console.log(`Folder created: ${assetPath}`);
+				}
+				// Rekursi untuk anak-anak dari folder ini
+				if (asset.children && asset.children.length > 0) {
+					await this.processAssets(asset.children, assetPath);
+				}
+			} else if (asset.type === "file") {
+				// Decode content jika ada
+				let content = asset.content ? decodeBase64(asset.content) : "";
+
+				// Ganti placeholder dengan placeholder_values
+				if (asset.placeholder_values) {
+					for (const [key, value] of Object.entries(asset.placeholder_values)) {
+						const placeholder = new RegExp(`{{${key}}}`, "g");
+						content = content.replace(placeholder, value);
+					}
+				}
+
+				// Handle backticks dalam konten
+				if (content.includes("`")) {
+					content = content.replace(/`/g, "`"); // Pastikan backticks tetap aman
+				}
+
+				// Tulis konten ke file
+				fs.writeFileSync(assetPath, content, "utf-8");
+				console.log(`File created: ${assetPath}`);
+			} else {
+				console.warn(`Unknown asset type: ${asset.type} for ${asset.name}`);
+			}
+		}
+	}
+}
+
+module.exports = { GenerateService };
+\end{lstlisting}

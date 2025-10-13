@@ -1,0 +1,16 @@
+\begin{lstlisting}[language=Javascript,caption={website Route}]
+const express = require("express");
+const { WebsiteController } = require("../controllers/WebsiteController");
+const { Authorization } = require("../middlewares/Authorization");
+const router = express.Router();
+
+router.use("/", Authorization.decryption());
+
+router.get("/", WebsiteController.getAll);
+router.get("/:id", WebsiteController.getOne);
+router.post("/", WebsiteController.post);
+router.patch("/:id", WebsiteController.patch);
+router.delete("/:id", WebsiteController.delete);
+
+module.exports = router;
+\end{lstlisting}

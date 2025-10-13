@@ -1,0 +1,26 @@
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{0.5cm}|p{3cm}|p{5cm}|p{5cm}|p{1.5cm}|}
+        \hline
+        \rowcolor[HTML]{DAE8FC} 
+        \textbf{No} & \textbf{Skenario} & \textbf{Kasus Uji} & \textbf{Hasil yang Diharapkan} & \textbf{Hasil} \\ \hline
+        1 & Mengakses endpoint tanpa pagination & 
+        - & 
+        Status code 200 OK, mengembalikan daftar seluruh website tanpa pagination & 
+        Berhasil \\ \hline
+        2 & Mengakses endpoint dengan pagination & 
+        page: 1 \newline limit: 5 & 
+        Status code 200 OK, mengembalikan daftar website sesuai pagination (page 1, 5 item per page) & 
+        Berhasil \\ \hline
+        3 & Mengakses endpoint dengan pagination tidak lengkap & 
+        page: 1 & 
+        Status code 400 Bad Request, gagal karena parameter pagination tidak lengkap & 
+        Berhasil \\ \hline
+        4 & Mengakses endpoint dengan parameter tidak valid & 
+        page: "abc" \newline limit: -5 & 
+        Status code 400 Bad Request, gagal karena parameter pagination tidak valid & 
+        Berhasil \\ \hline
+    \end{tabular}
+    \caption{Pengujian Fungsional Endpoint GET /website}
+    \label{tab:website_getall_testing}
+\end{table}

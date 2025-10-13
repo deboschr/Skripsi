@@ -1,0 +1,26 @@
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{0.5cm}|p{3cm}|p{5cm}|p{5cm}|p{1.5cm}|}
+        \hline
+        \rowcolor[HTML]{DAE8FC} 
+        \textbf{No} & \textbf{Skenario} & \textbf{Kasus Uji} & \textbf{Hasil yang Diharapkan} & \textbf{Hasil} \\ \hline
+        1 & Mengakses endpoint tanpa parameter & 
+        Tidak memerlukan input tambahan & 
+        Status code 200 OK, mengembalikan daftar semua pengguna tanpa pagination & 
+        Berhasil \\ \hline
+        2 & Mengakses endpoint dengan parameter valid & 
+        page: 1 \newline limit: 10 & 
+        Status code 200 OK, mengembalikan daftar pengguna sesuai pagination (halaman pertama, 10 data per halaman) & 
+        Berhasil \\ \hline
+        3 & Mengakses endpoint dengan parameter tidak lengkap & 
+        page: 1 & 
+        Status code 400 Bad Request, mengembalikan pesan error bahwa parameter tidak lengkap & 
+        Berhasil \\ \hline
+        4 & Mengakses endpoint dengan parameter invalid & 
+        page: "abc" \newline limit: -5 & 
+        Status code 400 Bad Request, mengembalikan pesan error bahwa parameter tidak valid & 
+        Berhasil \\ \hline
+    \end{tabular}
+    \caption{Pengujian Fungsional Endpoint GET /user}
+    \label{tab:user_getall_testing}
+\end{table}

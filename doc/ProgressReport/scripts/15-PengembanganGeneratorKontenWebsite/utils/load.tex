@@ -1,0 +1,14 @@
+\begin{lstlisting}[language=Javascript,caption={Load Data}]
+async function load(dataJob, data) {
+	try {
+		const endpoint = dataJob.endpoint;
+		const headers = dataJob.headers;
+
+		for (const [table, rows] of Object.entries(data)) {
+			await axios.post(endpoint, rows, { headers });
+		}
+	} catch (error) {
+		throw new Error(`Gagal memuat data ke API tujuan: ${error.message}`);
+	}
+}
+\end{lstlisting}

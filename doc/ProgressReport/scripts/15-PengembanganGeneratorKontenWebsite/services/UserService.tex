@@ -1,0 +1,141 @@
+\begin{lstlisting}[language=Javascript,caption={User Service}]
+const { UserRepository } = require("../repositories/UserRepository");
+const { Authorization } = require("../middlewares/Authorization");
+const { Authentication } = require("../middlewares/Authentication");
+
+class UserService {
+	static async readAll(dataQuery) {
+		try {
+			return await UserRepository.readAll(dataQuery);
+		} catch (error) {
+			throw error;
+		}
+	}
+
+	static async readOne(user_id) {
+		try {
+			return await UserRepository.readOneById(user_id);
+		} catch (error) {
+			throw error;
+		}
+	}
+
+	static async update(user_id, dataUser, dataSession) {
+		try {
+			if (user_id != dataSession.user_id) {
+				const newError = new Error("Access denied");
+				newError.code = 403;
+				throw newError;
+			}
+
+			if (dataUser.old_password && dataUser.new_password) {
+				const readUser = await UserRepository.readOneByEmail(dataSession.email);
+
+				const isValid = await Authentication.decryption(
+					readUser.password,
+					dataUser.old_password
+				);
+
+				if (!isValid) {
+					const newError = new Error("Wrong old password.");
+					newError.code = 400;
+					throw newError;
+				}
+
+				dataUser.password = await Authentication.encryption(
+					dataUser.new_password
+				);
+			}
+
+			dataUser.user_id = dataSession.user_id;
+			const updateUser = await UserRepository.update(dataUser);
+
+			const result = {
+				user_id: updateUser.user_id,
+				name: updateUser.name,
+				email: updateUser.email,
+			};
+
+			return result;
+		} catch (error) {
+			throw error;
+		}
+	}
+
+	static async delete(user_id, dataSession) {
+		try {
+			const deleteUser = await UserRepository.delete(user_id);
+
+			const result = {
+				success: true,
+				is_signout: user_id == dataSession.user_id,
+			};
+
+			return result;
+		} catch (error) {
+			throw error;
+		}
+	}
+
+	static async signup(dataUser) {
+		try {
+			const existingUser = await UserRepository.readOneByEmail(dataUser.email);
+
+			if (existingUser) {
+				const error = new Error("Email is already registered");
+				error.code = 409;
+				throw error;
+			}
+
+			dataUser.password = await Authentication.encryption(dataUser.password);
+
+			const createUser = await UserRepository.create(dataUser);
+
+			const result = {
+				user_id: createUser.user_id,
+				name: createUser.name,
+				email: createUser.email,
+			};
+
+			return result;
+		} catch (error) {
+			throw error;
+		}
+	}
+
+	static async signin(dataUser) {
+		try {
+			const readUser = await UserRepository.readOneByEmail(dataUser.email);
+
+			if (!readUser) {
+				const newError = new Error("User not found.");
+				newError.code = 404;
+				throw newError;
+			}
+
+			const isValid = await Authentication.decryption(
+				readUser.password,
+				dataUser.password
+			);
+
+			if (!isValid) {
+				const newError = new Error("Wrong password.");
+				newError.code = 400;
+				throw newError;
+			}
+
+			const { token, payload } = Authorization.encryption({
+				user_id: readUser.user_id,
+				name: readUser.name,
+				email: readUser.email,
+			});
+
+			return { token, payload };
+		} catch (error) {
+			throw error;
+		}
+	}
+}
+
+module.exports = { UserService };
+\end{lstlisting}

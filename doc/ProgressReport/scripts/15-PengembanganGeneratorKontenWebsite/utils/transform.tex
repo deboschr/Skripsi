@@ -1,0 +1,25 @@
+\begin{lstlisting}[language=Javascript,caption={Transform Data}]
+async function transform(dataJob, data) {
+	try {
+		const transformRules = dataJob.transform;
+		const transformedData = {};
+
+		for (const [table, rows] of Object.entries(data)) {
+			transformedData[table] = rows.map((row) => {
+				const transformedRow = {};
+				const rules = transformRules[table];
+
+				for (const [sourceField, targetField] of Object.entries(rules)) {
+					transformedRow[targetField] = row[sourceField];
+				}
+
+				return transformedRow;
+			});
+		}
+
+		return transformedData;
+	} catch (error) {
+		throw new Error(`Gagal mentransformasi data: ${error.message}`);
+	}
+}
+\end{lstlisting}

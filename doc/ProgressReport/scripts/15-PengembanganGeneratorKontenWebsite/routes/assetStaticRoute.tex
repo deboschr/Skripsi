@@ -1,0 +1,18 @@
+\begin{lstlisting}[language=Javascript,caption={Asset Static Route}]
+const express = require("express");
+const {
+	AssetStaticController,
+} = require("../controllers/AssetStaticController");
+const { Authorization } = require("../middlewares/Authorization");
+const router = express.Router();
+
+router.use("/", Authorization.decryption());
+
+router.get("/", AssetStaticController.getAll);
+router.get("/:id", AssetStaticController.getOne);
+router.post("/", AssetStaticController.post);
+router.patch("/:id", AssetStaticController.patch);
+router.delete("/:id", AssetStaticController.delete);
+
+module.exports = router;
+\end{lstlisting}

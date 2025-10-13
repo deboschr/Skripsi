@@ -1,0 +1,149 @@
+\documentclass[a4paper,twoside]{article}
+\usepackage[T1]{fontenc}
+\usepackage[bahasa]{babel}
+\usepackage{graphicx}
+\usepackage{graphics}
+\usepackage{float}
+\usepackage[cm]{fullpage}
+\pagestyle{myheadings}
+\usepackage{etoolbox}
+\usepackage{setspace} 
+\usepackage{lipsum} 
+\usepackage{enumitem}
+\usepackage{listings}
+\setlength{\headsep}{30pt}
+\usepackage[inner=2cm,outer=2.5cm,top=2.5cm,bottom=2cm]{geometry} %margin
+% \pagestyle{empty}
+
+% ############################################################################
+% Library tambahan
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{enumitem}
+\usepackage{multirow}
+\usepackage[table,xcdraw]{xcolor}
+% Beamer presentation requires \usepackage{colortbl} instead of
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{hyperref}
+\definecolor{biruFtis}{RGB}{0,166,226}
+\hypersetup{
+    colorlinks=true,
+    % Menggunakan format rgb
+    linkcolor= red,
+    filecolor= biruFtis,
+    urlcolor= biruFtis,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    }
+
+\usepackage{listings}
+\renewcommand{\lstlistingname}{Kode}
+\usepackage{xcolor}
+% Definisikan bahasa JavaScript untuk mendukung ReactJS
+\lstdefinelanguage{JavaScript}{
+    keywords={break, case, catch, continue, debugger, default, delete, do, else, finally, for, function, if, in, instanceof, new, return, switch, this, throw, try, typeof, var, void, while, with, let, const, await, async, import, from, export, default},
+    morekeywords={useState, useEffect, useContext, useReducer, className, render, component, React},
+    sensitive=true,
+    comment=[l]//,
+    commentstyle=\color{green!50!black}\itshape,
+    stringstyle=\color{red},
+    morestring=[b]',
+    morestring=[b]",
+}
+%listing khusus untuk penulisan kode program, menggunakan font Bera Mono
+\lstset{numbers=left,stepnumber=1, numbersep=5pt, frame=single,frameround={tttt},
+	tabsize=4, breaklines=true, basicstyle=\fontfamily{fvm}\selectfont\tiny, 
+	commentstyle=\itshape\color{gray}, keywordstyle=\bfseries\color{blue}, 
+	identifierstyle=\color{black}, stringstyle=\color{orange},
+	literate={-}{-}1{-\,-}{--}1
+} 
+% END LIBARY TAMBAHAN
+
+\setlength{\headsep}{30pt}
+\usepackage[inner=2cm,outer=2.5cm,top=2.5cm,bottom=2cm]{geometry} %margin
+% \pagestyle{empty}
+% ############################################################################
+
+\usepackage{array}
+\usepackage{tabularx}
+\renewcommand{\arraystretch}{1.5} % Mengatur jarak antar baris
+
+
+
+\makeatletter
+\renewcommand{\@maketitle} {\begin{center} {\LARGE \textbf{ \textsc{\@title}} \par} \bigskip {\large \textbf{\textsc{\@author}} }\end{center} }
+\renewcommand{\thispagestyle}[1]{}
+\markright{\textbf{\textsc{Laporan Perkembangan Pengerjaan Tugas Akhir\textemdash Sem. Ganjil 2024/2025}}}
+
+\onehalfspacing
+ 
+\begin{document}
+
+\title{\@judultopik}
+\author{\nama \textendash \@npm} 
+
+%ISILAH DATA BERIKUT INI:
+\newcommand{\nama}{Ade Rimbo Spencher}
+\newcommand{\@npm}{6182001060}
+\newcommand{\tanggal}{16/12/2024} %Tanggal pembuatan dokumen
+\newcommand{\@judultopik}{Pengembangan Generator Konten Website berbasis Application Programming Interface (API) untuk Mendukung Interoperabilitas yang Aman dan Andal} % Judul/topik anda
+\newcommand{\kodetopik}{GDK5704ACS}
+\newcommand{\jumpemb}{1} % Jumlah pembimbing, 1 atau 2
+\newcommand{\pembA}{Dr. Gede Karya, S.T., S.E., M.T., CISA}
+\newcommand{\pembB}{-}
+\newcommand{\semesterPertama}{57 - Ganjil 24/25} % semester pertama kali topik diambil, angka 1 dimulai dari sem Ganjil 96/97
+\newcommand{\lamaSkripsi}{1} % Jumlah semester untuk mengerjakan tugas akhir s.d. dokumen ini dibuat
+\newcommand{\kulPertama}{Tugas Akhir 1} % Kuliah dimana topik ini diambil pertama kali
+\newcommand{\tipePR}{B} % tipe progress report :
+% A : dokumen pendukung untuk pengambilan ke-2 di Tugas Akhir 1
+% B : dokumen untuk reviewer pada presentasi dan review Tugas Akhir 1
+% C : dokumen pendukung untuk pengambilan ke-2 di Tugas Akhir 2
+
+% Dokumen hasil template ini harus dicetak bolak-balik !!!!
+
+\maketitle
+
+\pagenumbering{arabic}
+
+% \section{Data Tugas Akhir}
+% \input{chapters/1-DataTugasAkhir}
+        
+% \section{Latar Belakang}
+% \input{chapters/2-LatarBelakang}
+
+% \section{Rumusan Masalah}
+% \input{chapters/3-RumusanMasalah}
+
+% \section{Tujuan}
+% \input{chapters/4-Tujuan}
+
+\section{Detail Perkembangan Pengerjaan Tugas Akhir}
+\input{chapters/5-DetailPerkembanganPengerjaanTugasAkhir}
+
+% \section{Pencapaian Rencana Kerja}
+% \input{chapters/6-PencapaianRencanaKerja}
+
+\newpage
+\vspace{2cm}
+\centering Bandung, \tanggal\\
+\vspace{2cm} \nama \\ 
+\vspace{1cm}
+
+Menyetujui, \\
+\ifdefstring{\jumpemb}{2}{
+\vspace{1.5cm}
+\begin{centering} Menyetujui,\\ \end{centering} \vspace{0.75cm}
+\begin{minipage}[b]{0.45\linewidth}
+% \centering Bandung, \makebox[0.5cm]{\hrulefill}/\makebox[0.5cm]{\hrulefill}/2013 \\
+\vspace{2cm} Nama: \pembA \\ Pembimbing Utama
+\end{minipage} \hspace{0.5cm}
+\begin{minipage}[b]{0.45\linewidth}
+% \centering Bandung, \makebox[0.5cm]{\hrulefill}/\makebox[0.5cm]{\hrulefill}/2013\\
+\vspace{2cm} \pembB \\ Pembimbing Pendamping
+\end{minipage}
+\vspace{0.5cm}
+}{
+% \centering Bandung, \makebox[0.5cm]{\hrulefill}/\makebox[0.5cm]{\hrulefill}/2013\\
+\vspace{2cm} \pembA \\ Pembimbing Tunggal
+}
+\end{document}

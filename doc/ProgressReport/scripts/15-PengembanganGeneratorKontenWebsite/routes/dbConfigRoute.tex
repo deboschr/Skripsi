@@ -1,0 +1,16 @@
+\begin{lstlisting}[language=Javascript,caption={Database Config Route}]
+const express = require("express");
+const { DbConfigController } = require("../controllers/DbConfigController");
+const { Authorization } = require("../middlewares/Authorization");
+const router = express.Router();
+
+router.use("/", Authorization.decryption());
+
+router.get("/", DbConfigController.getAll);
+router.get("/:id", DbConfigController.getOne);
+router.post("/", DbConfigController.post);
+router.patch("/:id", DbConfigController.patch);
+router.delete("/:id", DbConfigController.delete);
+
+module.exports = router;
+\end{lstlisting}

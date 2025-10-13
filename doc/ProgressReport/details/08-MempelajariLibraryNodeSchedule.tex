@@ -1,0 +1,146 @@
+Tujuan dari mempelajari \textit{library node-schedule} adalah untuk mendukung pengembangan dari modul sinkronisator data, sehingga sinkronisasi data dapat dilakukan secara otomatis. Sumber informasi dalam mempelajari \textit{library} adalah dokumentasi \textit{node-schedule} yang ada di \textit{website} resmi NPM dan \textit{Repository GitHub} resmi dari \textit{node-schedule}.
+
+Versi \textit{node-schedule} yang digunakan dalam eksplorasi adalah \textit{node-module} versi 2.1.1
+    
+\begin{enumerate}[label*=\arabic*.,ref=\arabic*]
+    \item Konsep Dasar\\
+    \textit{Library node-schedule} adalah \textit{library Node.js} yang digunakan untuk melakukan penjadwalan eksekusi tugas (\textit{task scheduling}). Cara kerja dari \textit{node-schedule} adalah menggunakan pola waktu yang didefinisikan pengguna untuk mendaftarkan tugas ke\textit{ event loop Node.js}. \textit{Library} ini secara internal menggunakan \textit{timer} untuk memeriksa waktu dan menjalankan \textit{callback} ketika pola waktu terpenuhi.
+
+    Berikut adalah tiga pendekatan penjadwalan yang didukung:
+    \begin{enumerate}[label*=\arabic*.,ref=\arabic*]
+        \item Penjadwalan dengan Waktu Spesifik\\
+        Pendekatan ini memungkinkan penjadwalan tugas yang dijalankan pada waktu tertentu. Pengguna dapat menentukan tanggal dan waktu yang spesifik, biasanya menggunakan objek \texttt{Date} di JavaScript. Misalnya, sebuah tugas dapat dijadwalkan untuk dijalankan pada 2024-12-09 10:00:00.
+
+        \item Penjadwalan dengan Waktu Berulang\\
+        Pendekatan ini memungkinkan penjadwalan tugas yang dijalankan secara berulang menggunakan interval tertentu. Sebagai contoh, tugas dapat dijalankan setiap 5 menit atau setiap hari pada waktu yang sama. Penggunaan waktu berulang akan menggunakan objek \texttt{RecurrenceRule} yang dapat diatur untuk mendefinisikan pola pengulangan.
+             
+        \item Penjadwalan dengan Pola Cron\\
+        Pendekatan ini memungkinkan penjadwalan tugas yang dijalankan secara berulang menggunakan pola \textit{cron}. Pola ini menggunakan format \textit{string} yang terdiri dari lima atau enam kolom (\texttt{* * * * * *}), yang masing-masing merepresentasikan detik (opsional), menit, jam, hari dalam bulan, bulan, dan hari dalam minggu. Sebagai contoh, pola \texttt{0 9 * * *} akan menjadwalkan tugas untuk berjalan setiap hari pada pukul 09:00.
+
+    \end{enumerate}
+        
+    \item Instalasi\\
+    Untuk mengunduh \textit{library} \texttt{node-schedule}, langkah-langkahnya adalah sebagai berikut:
+    
+    \begin{enumerate}[label*=\arabic*.,ref=\arabic*]
+        \item Pastikan Node.js sudah diunduh.
+        Periksa dengan perintah:
+        \begin{verbatim}
+        node -v
+        npm -v
+        \end{verbatim}
+
+        \item Inisialisasi proyek Node.js (jika belum ada).
+        \begin{verbatim}
+        mkdir my-node-project
+        cd my-node-project
+        npm init -y
+        \end{verbatim}
+
+        \item Instal \textit{library} \texttt{node-schedule}.
+        \begin{verbatim}
+        npm install node-schedule --save
+        \end{verbatim}
+
+        \item Verifikasi instalasi.
+        \begin{verbatim}
+        npm list node-schedule
+        \end{verbatim}
+    \end{enumerate}
+        
+    \item API dan Contoh Penggunaan\\
+    Secara fungsional, API pada \textit{node-schedule} dibagi menjadi tiga kategori utama:
+    
+    \begin{enumerate}[label*=\arabic*.,ref=\arabic*]
+        \item Penjadwalan \textit{Job}\\
+            
+        \begin{enumerate}[label=\alph*.]
+            \item \textbf{\textit{schedule.scheduleJob(nameOrRule, rule, callback)}}\\
+            Berfungsi untuk menjadwalkan \textit{job}. Berikut adalah contoh untuk tiga pendekatan penjadwalan: \\
+            \begin{itemize}
+                \item Penjadwalan dengan Waktu Spesifik\\
+                \textbf{Contoh:}
+                \input{scripts/08-MempelajariLibraryNodeSchedule/PenjadwalanWaktuSpesifik}
+                \textbf{Hasil:} \textit{Job} dijalankan satu kali pada \texttt{2024-12-09 10:00:00}.
+
+                \item Penjadwalan dengan Waktu Berulang\\
+                \textbf{Contoh:}
+                \vspace{-0.1cm}
+                \input{scripts/08-MempelajariLibraryNodeSchedule/PenjadwalanWaktuBerulang}
+                \textbf{Hasil:} \textit{Job} dijalankan setiap hari pada pukul 10:00.
+
+                \item Penjadwalan dengan Pola \textit{Cron}\\
+                \textbf{Contoh:}
+                \vspace{-0.1cm}
+                \input{scripts/08-MempelajariLibraryNodeSchedule/PenjadwalanPolaCron}
+                \textbf{Hasil:} \textit{Job} dijalankan setiap 10 detik sesuai pola \textit{cron} \texttt{*/10 * * * * *}.
+            \end{itemize}
+                
+            \item \textit{\textbf{job.reschedule(rule)}}\\
+                Berfungsi untuk menjadwalkan ulang \textit{job} yang sudah ada.\\
+            \textbf{Contoh:}
+            \vspace{-0.1cm}
+            \input{scripts/08-MempelajariLibraryNodeSchedule/PenjadwalanJob}
+            \textbf{Hasil:} \textit{`Job executed based on cron pattern at'} di \textit{console} setiap 1 menit setelah \textit{reschedule}.
+                
+        \end{enumerate}
+
+        \item Pembatalan \textit{Job}\\
+        \begin{enumerate}[label=\alph*.]
+            \item \textbf{\textit{schedule.cancelJob(nameOrJob)}}\\
+            Berfungsi untuk membatalkan \textit{job} berdasarkan nama atau referensi objek \textit{job}.\\
+            \begin{itemize}
+                \item Pembatalan dengan nama \textit{job}\\
+                \textbf{Contoh:}
+                \vspace{-0.1cm}
+                \input{scripts/08-MempelajariLibraryNodeSchedule/PembatalanJob}
+                \textbf{Hasil:} \textit{Job} dengan nama \textit{job1} dibatalkan
+
+                \item Pembatalan dengan referensi objek \textit{job}\\
+                \textbf{Contoh:}
+                \vspace{-0.1cm}
+                \input{scripts/08-MempelajariLibraryNodeSchedule/PembatalanObjekJob}
+                \textbf{Hasil:} \textit{job} yang disimpan dalam variabel \textit{job} dibatalkan
+
+            \end{itemize}
+                
+            \item \textbf{\textit{job.cancel()}}\\
+            Berfungsi untuk membatalkan \textit{job} tertentu secara manual.\\
+            \textbf{Contoh:}
+            \vspace{-0.1cm}
+            \input{scripts/08-MempelajariLibraryNodeSchedule/PembatalanJobManual}
+            \textbf{Hasil:} \textit{job} dibatalkan
+            
+            \item \textbf{\textit{job.cancelNext()}}\\
+            Berfungsi untuk membatalkan eksekusi \textit{job} berikutnya pada \textit{job} yang berulang.\\
+            \textbf{Contoh:}
+            \vspace{-0.1cm}
+            \input{scripts/08-MempelajariLibraryNodeSchedule/PembatalanJobBerulang}
+            \textbf{Hasil:} eksekusi \textit{job} berikutnya dibatalkan
+                
+        \end{enumerate}
+
+        \item \textit{Debugging} dan Informasi \textit{Job}\\
+        \begin{enumerate}[label=\alph*.]
+            \item \textbf{\textit{schedule.scheduledJobs}}\\
+            Menyediakan daftar semua \textit{job} yang sedang dijadwalkan dalam bentuk objek.\\
+            \textbf{Contoh:}
+            \input{scripts/08-MempelajariLibraryNodeSchedule/MenyediakanDaftarJob}
+            \textbf{Hasil:} Mengambalikan nama job yang aktif
+                
+            \item \textbf{\textit{job.nextInvocation()}}\\
+            Berfungsi untuk mengembalikan waktu eksekusi berikutnya dari \textit{job}.\\
+            \textbf{Contoh:}
+            \input{scripts/08-MempelajariLibraryNodeSchedule/MengembalikanWaktuEksekusi}
+            \textbf{Hasil:} Mengembalikan waktu eksekusi berikutnya 
+                
+            \item \textit{\textbf{job.invoke()}}\\
+            Menjalankan \textit{job} secara manual tanpa menunggu waktu yang dijadwalkan.\\
+            \textbf{Contoh:}
+            \input{scripts/08-MempelajariLibraryNodeSchedule/MenjalankanJobManual}
+            \textbf{Hasil:} \textit{job} dieksekusi tanpa menunggu waktu eksekusi.
+                
+        \end{enumerate}
+
+    \end{enumerate}
+\end{enumerate}

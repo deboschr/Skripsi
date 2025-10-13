@@ -1,0 +1,8 @@
+\begin{lstlisting}[language=Javascript,caption={Penjadwalan dengan Waktu Berulang}]
+const rule = new schedule.RecurrenceRule();
+rule.hour = 10; // Setiap jam 10 pagi
+rule.minute = 0; // Pada menit 0
+const job = schedule.scheduleJob('recurringJob', rule, () => {
+    console.log('Recurring job executed at', new Date()); 
+});
+\end{lstlisting}

@@ -1,0 +1,50 @@
+Pengembangan Generator Konten \textit{Website} berbasis API bertujuan untuk merealisasikan sistem yang dirancang, menyediakan antarmuka API untuk pengelolaan templat, dan menghasilkan \textit{website} berdasarkan templat pilihan pengguna.
+
+\begin{enumerate}[label*=\arabic*.,ref=\arabic*]
+    \item Lingkungan Pengembangan
+        \begin{itemize}
+            \item \textbf{Bahasa Pemrograman:} JavaScript.
+            \item \textbf{Runtime:} Node.js.
+            \item \textbf{Framework Backend:} Express.js.
+            \item \textbf{ORM:} \textit{Sequelize} untuk PostgreSQL.
+            \item \textbf{Pustaka:}
+                \begin{itemize}
+                    \item \texttt{body-parser}: \textit{Middleware} untuk \textit{parsing body request.}
+                    \item \texttt{dotenv}: Manajemen konfigurasi lingkungan.
+                    \item \texttt{joi}: Validasi data.
+                    \item \texttt{jsonwebtoken}: Otentikasi berbasis token.
+                    \item \texttt{pg} dan \texttt{pg-hstore}: Koneksi PostgreSQL.
+                \end{itemize}
+        \end{itemize}
+        
+    \item Struktur Proyek\\
+        Struktur proyek dirancang untuk mendukung modularitas dan kemudahan pengelolaan kode. Berikut adalah struktur direktori proyek:
+
+        \begin{itemize}
+            \item \textbf{config/}: Berisi file konfigurasi seperti koneksi basis data.
+            \item \textbf{controllers/}: Berisi fungsi untuk menangani permintaan dan respons API.
+            \item \textbf{routes/}: Mendefinisikan \textit{endpoint} API dan menghubungkannya dengan \textit{controller}.
+            \item \textbf{models/}: Berisi definisi tabel basis data menggunakan Sequelize.
+            \item \textbf{repositories/}: Mengabstraksi \textit{query} basis data untuk digunakan oleh \textit{service}.
+            \item \textbf{services/}: Berisi logika bisnis, seperti pengelolaan templat atau proses \textit{generate website.}
+            \item \textbf{middlewares/}: \textit{Middleware} untuk validasi data, otentikasi JWT, dll.
+            \item \textbf{utils/}: Berisi fungsi pendukung yang digunakan di berbagai bagian sistem.
+        \end{itemize}
+
+        
+    \item Implementasi Fitur
+        \begin{enumerate}[label=\alph*.]
+            \item \textbf{Pengelolaan Templat \textit{Website}}\\
+            API ini memungkinkan pengguna untuk mengelola templat dengan menambahkan, membaca, memperbarui, dan menghapus templat. Contoh implementasi \textit{endpoint} untuk menambahkan templat baru:
+            \input{scripts/15-PengembanganGeneratorKontenWebsite/routes/assetStaticRoute}
+
+            \item \textbf{\textit{Generate Website}}\\
+            API ini memungkinkan pengguna menghasilkan \textit{website} berdasarkan templat. Proses melibatkan penggabungan aset statis dan dinamis, serta penyimpanan hasil di direktori yang telah ditentukan. Contoh kode:
+            \input{scripts/15-PengembanganGeneratorKontenWebsite/services/GenerateService}
+
+            \item \textbf{Validasi Data}\\
+            Validasi dilakukan menggunakan pustaka \texttt{joi} untuk memastikan data sesuai dengan skema. Contoh implementasi validasi:
+           \input{scripts/15-PengembanganGeneratorKontenWebsite/utils/validators/assetStaticSchema}
+        \end{enumerate}
+        
+\end{enumerate}

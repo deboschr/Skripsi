@@ -1,0 +1,22 @@
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{0.5cm}|p{3cm}|p{5cm}|p{5cm}|p{1.5cm}|}
+        \hline
+        \rowcolor[HTML]{DAE8FC} 
+        \textbf{No} & \textbf{Skenario} & \textbf{Kasus Uji} & \textbf{Hasil yang Diharapkan} & \textbf{Hasil} \\ \hline
+        1 & Mengirim data valid untuk memperbarui folder & 
+        id: 1 \newline name: assets \newline type: folder & 
+        Status code 200 OK, berhasil memperbarui data aset statis & 
+        Berhasil \\ \hline
+        2 & Mengirim data valid untuk memperbarui file & 
+        id: 2 \newline name: apikey.json \newline placeholders: {"KEY\_NAME": "new\_secret"} & 
+        Status code 200 OK, berhasil memperbarui data aset statis & 
+        Berhasil \\ \hline
+        3 & Mengirim data tanpa atribut apapun & 
+        Tidak ada body request & 
+        Status code 400 Bad Request, gagal karena tidak ada data untuk diperbarui & 
+        Berhasil \\ \hline
+    \end{tabular}
+    \caption{Pengujian Fungsional Endpoint PATCH /asset-static/:id}
+    \label{tab:asset_static_patch_testing}
+\end{table}

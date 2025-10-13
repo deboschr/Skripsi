@@ -1,0 +1,22 @@
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{0.5cm}|p{3cm}|p{5cm}|p{5cm}|p{1.5cm}|}
+        \hline
+        \rowcolor[HTML]{DAE8FC} 
+        \textbf{No} & \textbf{Skenario} & \textbf{Kasus Uji} & \textbf{Hasil yang Diharapkan} & \textbf{Hasil} \\ \hline
+        1 & Mengirim data valid & 
+        website\_id: 1 \newline host: localhost \newline port: 5432 \newline db\_name: website\_target1 \newline user: admin\_wt1 \newline password: adminwt1424 \newline type: postgres & 
+        Status code 201 Created, berhasil membuat konfigurasi basis data & 
+        Berhasil \\ \hline
+        2 & Mengirim data dengan atribut tidak lengkap & 
+        host: localhost \newline port: 5432 & 
+        Status code 400 Bad Request, gagal karena atribut wajib tidak lengkap & 
+        Berhasil \\ \hline
+        3 & Mengirim data dengan tipe atribut tidak valid & 
+        website\_id: 1 \newline port: "string" & 
+        Status code 400 Bad Request, gagal karena tipe data atribut tidak valid & 
+        Berhasil \\ \hline
+    \end{tabular}
+    \caption{Pengujian Fungsional Endpoint POST /db-config}
+    \label{tab:db_config_post_testing}
+\end{table}

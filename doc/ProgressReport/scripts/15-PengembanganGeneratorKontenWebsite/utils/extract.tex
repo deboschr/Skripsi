@@ -1,0 +1,21 @@
+\begin{lstlisting}[language=Javascript,caption={Extract Data}]
+async function extract(dataJob) {
+	try {
+		console.log("Melakukan ekstraksi data...");
+
+		const connection = await connectToDatabase(dataJob.source_db);
+
+		const tables = dataJob.tables;
+		const extractedData = {};
+
+		for (const table of tables) {
+			console.log(`Mengambil data dari tabel: ${table}`);
+			extractedData[table] = await connection.query(`SELECT * FROM ${table}`);
+		}
+
+		return extractedData;
+	} catch (error) {
+		throw new Error(`Gagal mengekstrak data: ${error.message}`);
+	}
+}
+\end{lstlisting}

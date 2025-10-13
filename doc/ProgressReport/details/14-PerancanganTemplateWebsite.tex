@@ -1,0 +1,44 @@
+Templat \textit{website} dirancang untuk menjadi dasar dalam proses \textit{generate website} oleh Generator Konten \textit{Website} berbasis API. Perancangan templat ini bertujuan untuk menyediakan struktur yang fleksibel, mudah digunakan, dan mampu mendukung berbagai kebutuhan pengguna. Selain itu, templat harus memungkinkan personalisasi dengan mengganti \textit{placeholder} atau data dinamis sesuai konfigurasi pengguna.
+
+Berikut adalah komponen-komponen dari sebuah templat:
+\begin{enumerate}[label=\alph*.]
+    \item \textbf{Website}\\
+        Komponen ini merupakan inti dari sebuah templat \textit{website}. Pada komponen ini, pengguna menentukan:
+        \begin{itemize}
+            \item Nama \textit{website} templat, yang akan menjadi identitas unik dari templat.
+            \item Direktori penyimpanan hasil \textit{generate} dari templat, yang menentukan lokasi folder \textit{output} setelah proses \textit{generate website}.
+        \end{itemize}
+        \textit{Website} juga berfungsi sebagai entitas utama yang mengelola hubungan dengan komponen lainnya, seperti aset statis, aset dinamis, dan konfigurasi basis data jika diperlukan.
+
+    \item \textbf{Basis Data}\\
+        Komponen ini merupakan bagian yang opsional, tergantung pada jenis \textit{website} apakah membutuhkan basis data atau tidak. Jika basis data diperlukan, pengguna dapat mendefinisikan spesifikasi koneksi ke basis data. Spesifikasi yang dapat ditentukan meliputi:
+        \begin{itemize}
+            \item \textbf{Host basis data}: Alamat server basis data.
+            \item \textbf{Port}: Nomor \textit{port} yang digunakan untuk koneksi ke server.
+            \item \textbf{Nama basis data}: Nama basis data yang akan digunakan.
+            \item \textbf{Jenis basis data}: Format basis data seperti MySQL, PostgreSQL, atau lainnya.
+            \item \textbf{Kredensial pengguna}: Informasi \textit{username} dan \textit{password} untuk otentikasi.
+        \end{itemize}
+        Basis data ini dapat digunakan untuk mendukung operasi dinamis pada \textit{website} hasil \textit{generate}, seperti pengelolaan data pengguna atau konten yang berubah-ubah.
+
+    \item \textbf{Aset Statis}\\
+        Komponen ini merupakan bagian yang menentukan struktur dan isi \textit{file} dalam templat. Aset statis dapat berupa folder atau \textit{file}. Jika sebuah aset berupa \textit{file}, pengguna harus memasukkan isi \textit{file} tersebut, dan bagian-bagian yang dapat diganti dengan aset dinamis harus diberi penanda menggunakan \textit{placeholder}. \textit{Placeholder} adalah penanda khusus yang nantinya akan diganti dengan data dinamis saat proses \textit{generate website}.
+
+        Berikut adalah contoh aset statis dengan \textit{placeholder}:
+        \input{scripts/14-PerancanganTemplatWebsite/aset-statis}
+        
+        Pada contoh di atas:
+        \begin{itemize}
+            \item \texttt{\{\{MODEL\_NAME\}\}} adalah \textit{placeholder} untuk nama model dalam aplikasi.
+            \item \texttt{\{\{VARIABLE\_NAME\}\}} adalah \textit{placeholder} untuk nama variabel yang digunakan.
+        \end{itemize}
+        \textit{Placeholder} ini memungkinkan \textit{file} statis untuk disesuaikan sesuai kebutuhan pengguna.
+
+    \item \textbf{Aset Dinamis}\\
+        Komponen ini merupakan bagian yang menentukan nilai pengganti untuk \textit{placeholder} yang ada di aset statis. Pengguna mendefinisikan aset dinamis dengan memilih \textit{placeholder} tertentu dari aset statis dan memberikan nilai penggantinya. Nilai ini akan digunakan saat proses \textit{generate website} untuk menggantikan \textit{placeholder}.
+
+        Berikut adalah contoh aset dinamis yang menggantikan \textit{placeholder} pada contoh aset statis di atas:
+        \input{scripts/14-PerancanganTemplatWebsite/aset-dinamis}
+
+        Dalam proses \textit{generate website}, \textit{placeholder} \texttt{\{\{MODEL\_NAME\}\}} akan digantikan oleh nilai \texttt{"User"} dan \textit{placeholder} \texttt{\{\{VARIABLE\_NAME\}\}} akan digantikan oleh nilai \texttt{"getUser"}.
+\end{enumerate}

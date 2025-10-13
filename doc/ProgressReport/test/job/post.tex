@@ -1,0 +1,22 @@
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{0.5cm}|p{3cm}|p{5cm}|p{5cm}|p{1.5cm}|}
+        \hline
+        \rowcolor[HTML]{DAE8FC} 
+        \textbf{No} & \textbf{Skenario} & \textbf{Kasus Uji} & \textbf{Hasil yang Diharapkan} & \textbf{Hasil} \\ \hline
+        1 & Mengirim data valid & 
+        db\_config\_id: 1 \newline name: "Job Sync" \newline cron: "*/10 * * * *" \newline tables: ["users", "orders"] \newline enpoint: "http://api.internal/user" \newline headers: {"Authorization": "Bearer token"} \newline request\_format: \{"key": "value"\} \newline transform: \{"key": "new\_value"\} & 
+        Status code 201 Created, berhasil membuat data job baru & 
+        Berhasil \\ \hline
+        2 & Tidak mengirim data wajib seperti db\_config\_id & 
+        name: "Job Sync" \newline cron: "*/10 * * * *" \newline tables: ["users"] & 
+        Status code 400 Bad Request, gagal karena db\_config\_id wajib dikirimkan & 
+        Berhasil \\ \hline
+        3 & Mengirim data dengan atribut tidak valid & 
+        db\_config\_id: "string" \newline name: 123 \newline cron: "*/10 * * * *" & 
+        Status code 400 Bad Request, gagal karena tipe data atribut tidak valid & 
+        Berhasil \\ \hline
+    \end{tabular}
+    \caption{Pengujian Fungsional Endpoint POST /job}
+    \label{tab:job_post_testing}
+\end{table}

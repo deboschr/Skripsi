@@ -1,0 +1,43 @@
+Dari hasil studi literatur, berikut hal-hal yang didapatkan :
+\begin{enumerate}[label*=\arabic*.,ref=\arabic*]
+    \item Konsep Dasar \\
+    \textit{OAuth 2.0} adalah protokol delegasi yang memungkinkan pemilik sumber daya memberikan akses kepada aplikasi perangkat lunak untuk sumber daya tersebut tanpa harus menyamar sebagai pemiliknya. Aplikasi mendapatkan otorisasi melalui token yang mewakili hak akses yang didelegasikan. Token ini dapat dianggap seperti "kunci valet" pada mobil, yang memberikan akses terbatas kepada pengguna tanpa memberikan kontrol penuh.
+
+    Sebagai contoh, jika Anda ingin mencetak foto dari layanan penyimpanan awan menggunakan layanan cetak foto, \textit{OAuth} memungkinkan delegasi akses antara dua layanan yang berbeda tanpa berbagi kata sandi. \textit{OAuth} bekerja dengan baik pada layanan web RESTful dan aplikasi klien, baik web maupun \textit{native}, serta dapat diterapkan dari aplikasi kecil hingga API internet dengan jutaan pengguna.
+
+    \item Komponen OAuth2 \\ 
+    \textit{OAuth} terdiri dari beberapa mekanisme utama, yaitu:
+        \begin{enumerate}[label=\alph*.]
+            \item Access Token \\
+            Token yang dikeluarkan oleh server otorisasi kepada klien, menunjukkan hak akses yang diberikan. Token ini bersifat \textit{opaque} bagi klien, sehingga klien hanya membawa dan menggunakannya tanpa mengetahui isinya. Token divalidasi oleh server otorisasi dan sumber daya terlindungi.
+            \item Scope \\
+            Representasi hak akses dalam bentuk string yang mendefinisikan batasan akses klien terhadap sumber daya.
+            \item Refresh Token \\
+            Token khusus yang memungkinkan klien meminta token akses baru tanpa melibatkan pemilik sumber daya.
+            \item Authorization Grant \\
+            Mekanisme yang memungkinkan klien memperoleh token melalui proses delegasi otorisasi. Proses ini mencakup pengalihan pengguna ke \textit{endpoint} otorisasi, penerimaan kode, dan penukaran kode dengan token.
+        \end{enumerate}
+
+    \item Tujuan OAuth2
+        \begin{enumerate}[label=\alph*.]
+            \item Keamanan \\
+            \textit{OAuth 2.0} bertujuan untuk melindungi data pengguna dengan memberikan akses berbasis token sementara, yang berbeda dari berbagi kredensial langsung (\textit{username/password}).
+                \begin{itemize}
+                    \item Token hanya berlaku untuk ruang lingkup tertentu (misalnya, hanya untuk membaca email pengguna).
+                    \item Pengguna memiliki kontrol penuh atas izin yang diberikan, termasuk mencabut akses kapan saja.
+                \end{itemize}
+            \item Skalabilitas \\
+            \textit{OAuth 2.0} dirancang untuk mendukung berbagai jenis aplikasi dan skenario autentikasi, seperti:
+                \begin{itemize}
+                    \item Aplikasi \textit{Web}: Otorisasi untuk aplikasi berbasis \textit{browser}.
+                    \item Aplikasi \textit{Mobile}: Integrasi otorisasi untuk aplikasi \textit{Android} atau \textit{iOS}.
+                    \item IoT: Mengamankan komunikasi perangkat pintar yang memerlukan akses sumber daya server.
+                \end{itemize}
+            \item Kemudahan Integrasi \\
+            \textit{OAuth 2.0} membebaskan aplikasi pihak ketiga dari tanggung jawab mengelola kredensial pengguna secara langsung. Sebagai gantinya:
+                \begin{itemize}
+                    \item Server otorisasi (\textit{authorization server}) menangani autentikasi pengguna dan mengeluarkan token akses.
+                    \item Aplikasi hanya menggunakan token akses untuk berkomunikasi dengan API server. Contoh: Saat pengguna masuk ke aplikasi menggunakan tombol "Login with Google," aplikasi tersebut tidak pernah menyimpan kata sandi pengguna.
+                \end{itemize}
+        \end{enumerate}
+\end{enumerate}

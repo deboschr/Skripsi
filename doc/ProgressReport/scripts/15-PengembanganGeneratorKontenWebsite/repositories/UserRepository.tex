@@ -1,0 +1,198 @@
+\begin{lstlisting}[language=Javascript,caption={User Repository}]
+const { UserModel } = require("../models/index.js");
+
+const {
+	DatabaseManager,
+	Sequelize,
+	Op,
+} = require("../config/DatabaseManager.js");
+const MyDB = DatabaseManager.getDatabase();
+
+class UserRepository {
+	static async readAll(dataQuery) {
+		try {
+			const options = {
+				order: [["email", "ASC"]],
+				attributes: ["user_id", "name", "email"],
+			};
+
+			const formatResult = (rows) => {
+				return rows.map((user) => {
+					return {
+						user_id: user.user_id,
+						name: user.name,
+						email: user.email,
+					};
+				});
+			};
+
+			if (dataQuery.page && dataQuery.limit) {
+				const limit = parseInt(dataQuery.limit, 10);
+				const page = parseInt(dataQuery.page, 10);
+				const offset = (page - 1) * limit;
+
+				const totalItems = await UserModel.count();
+
+				options.limit = limit;
+				options.offset = offset;
+
+				const rows = await UserModel.findAll(options);
+				const data = formatResult(rows);
+
+				const meta = {
+					totalItems: totalItems,
+					itemCount: data.length,
+					itemsPerPage: limit,
+					totalPages: Math.ceil(totalItems / limit),
+					currentPage: page,
+				};
+
+				return { data, meta };
+			} else {
+				const rows = await UserModel.findAll(options);
+				const data = formatResult(rows);
+
+				return { data, meta: null };
+			}
+		} catch (error) {
+			throw error;
+		}
+	}
+
+	static async readOneById(user_id) {
+		try {
+			const findUser = await UserModel.findOne({
+				where: { user_id: user_id },
+				attributes: { exclude: ["password"] },
+			});
+
+			if (!findUser) {
+				const newError = new Error("User not found.");
+				newError.code = 404;
+				throw newError;
+			}
+
+			return findUser;
+		} catch (error) {
+			throw error;
+		}
+	}
+
+	static async readOneByEmail(email) {
+		try {
+			const findUser = await UserModel.findOne({
+				where: { email: email },
+			});
+
+			return findUser;
+		} catch (error) {
+			throw error;
+		}
+	}
+
+	static async create(dataUser) {
+		let transaction;
+		try {
+			transaction = await MyDB.transaction();
+
+			const createUser = await UserModel.create(
+				{
+					name: dataUser.name,
+					email: dataUser.email,
+					password: dataUser.password,
+				},
+				{ transaction }
+			);
+
+			await transaction.commit();
+
+			return createUser;
+		} catch (error) {
+			if (transaction) await transaction.rollback();
+
+			if (error instanceof Sequelize.UniqueConstraintError) {
+				const newError = new Error(error.errors[0].message);
+				newError.code = 400;
+				throw newError;
+			}
+
+			throw error;
+		}
+	}
+
+	static async update(dataUser) {
+		let transaction;
+		try {
+			transaction = await MyDB.transaction();
+
+			const findUser = await UserModel.findOne({
+				where: { user_id: dataUser.user_id },
+			});
+
+			if (!findUser) {
+				const newError = new Error("User not found.");
+				newError.code = 404;
+				throw newError;
+			}
+
+			await findUser.update(
+				{
+					name: dataUser.name || findUser.name,
+					email: dataUser.email || findUser.email,
+					password: dataUser.password || findUser.password,
+				},
+				{ transaction }
+			);
+
+			await transaction.commit();
+
+			return findUser;
+		} catch (error) {
+			if (transaction) await transaction.rollback();
+
+			if (error instanceof Sequelize.UniqueConstraintError) {
+				const newError = new Error(error.errors[0].message);
+				newError.code = 400;
+				throw newError;
+			}
+
+			throw error;
+		}
+	}
+
+	static async delete(user_id) {
+		let transaction;
+		try {
+			transaction = await MyDB.transaction();
+
+			const findUser = await UserModel.findOne({
+				where: { user_id: user_id },
+			});
+
+			if (!findUser) {
+				const newError = new Error("User not found.");
+				newError.code = 404;
+				throw newError;
+			}
+
+			await findUser.destroy({ transaction });
+
+			await transaction.commit();
+
+			return findUser;
+		} catch (error) {
+			if (transaction) await transaction.rollback();
+
+			if (error instanceof Sequelize.ForeignKeyConstraintError) {
+				const newError = new Error("Delete is not permitted.");
+				newError.status = 403;
+				throw newError;
+			}
+
+			throw error;
+		}
+	}
+}
+
+module.exports = { UserRepository };
+\end{lstlisting}

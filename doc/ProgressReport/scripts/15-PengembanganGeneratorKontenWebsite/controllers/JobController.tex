@@ -1,0 +1,103 @@
+\begin{lstlisting}[language=Javascript,caption={website Controller}]
+const { WebsiteService } = require("../services/WebsiteService");
+const { Validator } = require("../utils/validator");
+const { responseHandler } = require("../utils/responseHandler");
+
+class WebsiteController {
+	static async getAll(req, res) {
+		try {
+			let { error } = Validator.getAllWebsite(req.query);
+
+			if (error) {
+				const newError = new Error(error.details[0].message);
+				newError.code = 400;
+				throw newError;
+			}
+
+			let { data, meta } = await WebsiteService.readAll(req.query);
+
+			responseHandler(res, 200, data, meta);
+		} catch (error) {
+			console.error(error);
+			responseHandler(res, error.code, null, null, error.message);
+		}
+	}
+
+	static async getOne(req, res) {
+		try {
+			let readWebsite = await WebsiteService.readOne(req.params.id);
+
+			responseHandler(res, 200, readWebsite);
+		} catch (error) {
+			console.error(error);
+			responseHandler(res, error.code, null, null, error.message);
+		}
+	}
+
+	static async post(req, res) {
+		try {
+			let { error } = Validator.createWebsite(req.body);
+
+			if (error) {
+				const newError = new Error(error.details[0].message);
+				newError.code = 400;
+				throw newError;
+			}
+
+			const createWebsite = await WebsiteService.create(
+				req.body,
+				req.dataSession
+			);
+
+			responseHandler(res, 201, createWebsite);
+		} catch (error) {
+			console.error(error);
+			responseHandler(res, error.code, null, null, error.message);
+		}
+	}
+
+	static async patch(req, res) {
+		try {
+			let { error } = Validator.updateWebsite(req.body);
+
+			if (error) {
+				const newError = new Error(error.details[0].message);
+				newError.code = 400;
+				throw newError;
+			}
+
+			const updateWebsite = await WebsiteService.update(
+				req.params.id,
+				req.body,
+				req.dataSession
+			);
+
+			responseHandler(res, 200, updateWebsite);
+		} catch (error) {
+			console.error(error);
+			responseHandler(res, error.code, null, null, error.message);
+		}
+	}
+
+	static async delete(req, res) {
+		try {
+			let { error } = Validator.deleteWebsite({ website_id: req.params.id });
+
+			if (error) {
+				const newError = new Error(error.details[0].message);
+				newError.code = 400;
+				throw newError;
+			}
+
+			await WebsiteService.delete(req.params.id);
+
+			responseHandler(res, 200);
+		} catch (error) {
+			console.error(error);
+			responseHandler(res, error.code, null, null, error.message);
+		}
+	}
+}
+
+module.exports = { WebsiteController };
+\end{lstlisting}

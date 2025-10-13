@@ -1,0 +1,22 @@
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{0.5cm}|p{3cm}|p{5cm}|p{5cm}|p{1.5cm}|}
+        \hline
+        \rowcolor[HTML]{DAE8FC} 
+        \textbf{No} & \textbf{Skenario} & \textbf{Kasus Uji} & \textbf{Hasil yang Diharapkan} & \textbf{Hasil} \\ \hline
+        1 & Mengakses endpoint dengan ID valid & 
+        id: 1 & 
+        Status code 200 OK, mengembalikan detail website dengan ID 1 & 
+        Berhasil \\ \hline
+        2 & Mengakses endpoint dengan ID yang tidak ditemukan & 
+        id: 9999 & 
+        Status code 404 Not Found, gagal karena ID website tidak ditemukan & 
+        Berhasil \\ \hline
+        3 & Mengakses endpoint dengan ID tidak valid & 
+        id: "abc" & 
+        Status code 400 Bad Request, gagal karena format ID tidak valid & 
+        Berhasil \\ \hline
+    \end{tabular}
+    \caption{Pengujian Fungsional Endpoint GET /website/:id}
+    \label{tab:website_getone_testing}
+\end{table}

@@ -1,0 +1,16 @@
+\begin{lstlisting}[language=Javascript,caption={Job Route}]
+const express = require("express");
+const { JobController } = require("../controllers/JobController");
+const { Authorization } = require("../middlewares/Authorization");
+const router = express.Router();
+
+router.use("/", Authorization.decryption());
+
+router.get("/", JobController.getAll);
+router.get("/:id", JobController.getOne);
+router.post("/", JobController.post);
+router.patch("/:id", JobController.patch);
+router.delete("/:id", JobController.delete);
+
+module.exports = router;
+\end{lstlisting}

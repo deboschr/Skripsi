@@ -1,0 +1,18 @@
+\begin{lstlisting}[language=Javascript,caption={Asset Dynamic Route}]
+const express = require("express");
+const {
+	AssetDynamicController,
+} = require("../controllers/AssetDynamicController");
+const { Authorization } = require("../middlewares/Authorization");
+const router = express.Router();
+
+router.use("/", Authorization.decryption());
+
+router.get("/", AssetDynamicController.getAll);
+router.get("/:id", AssetDynamicController.getOne);
+router.post("/", AssetDynamicController.post);
+router.patch("/:id", AssetDynamicController.patch);
+router.delete("/:id", AssetDynamicController.delete);
+
+module.exports = router;
+\end{lstlisting}

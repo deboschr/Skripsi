@@ -1,0 +1,28 @@
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{0.5cm}|p{3cm}|p{5cm}|p{5cm}|p{1.5cm}|}
+        \hline
+        \rowcolor[HTML]{DAE8FC} 
+        \textbf{No} & \textbf{Skenario} & \textbf{Kasus Uji} & \textbf{Hasil yang Diharapkan} & \textbf{Hasil} \\ \hline
+        1 & Mengirim data valid & 
+        name: Website Target 1 \newline 
+        dir\_path: ../website-result & 
+        Status code 201 Created, berhasil membuat website baru dan mengembalikan data website & 
+        Berhasil \\ \hline
+        2 & Mengirim data dengan nama yang sudah digunakan & 
+        name: Website Target 1 \newline 
+        dir\_path: ../website-result & 
+        Status code 409 Conflict, gagal karena nama website sudah ada & 
+        Berhasil \\ \hline
+        3 & Mengirim data dengan direktori kosong & 
+        name: Website Target 2 & 
+        Status code 400 Bad Request, gagal karena direktori tidak boleh kosong & 
+        Berhasil \\ \hline
+        4 & Mengirim data tanpa nama website & 
+        dir\_path: ../website-result & 
+        Status code 400 Bad Request, gagal karena nama website tidak boleh kosong & 
+        Berhasil \\ \hline
+    \end{tabular}
+    \caption{Pengujian Fungsional Endpoint POST /website}
+    \label{tab:website_create_testing}
+\end{table}

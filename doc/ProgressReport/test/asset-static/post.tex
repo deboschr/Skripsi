@@ -1,0 +1,26 @@
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{0.5cm}|p{3cm}|p{5cm}|p{5cm}|p{1.5cm}|}
+        \hline
+        \rowcolor[HTML]{DAE8FC} 
+        \textbf{No} & \textbf{Skenario} & \textbf{Kasus Uji} & \textbf{Hasil yang Diharapkan} & \textbf{Hasil} \\ \hline
+        1 & Mengirim data valid untuk folder & 
+        website\_id: 1 \newline parent\_id: null \newline name: public \newline type: folder \newline content: null \newline placeholders: null & 
+        Status code 201 Created, berhasil membuat folder di aset statis & 
+        Berhasil \\ \hline
+        2 & Mengirim data valid untuk file & 
+        website\_id: 1 \newline parent\_id: 1 \newline name: apikey.json \newline type: file \newline content: eyJ7e0tF \newline placeholders: {"KEY\_NAME": "secret\_key"} & 
+        Status code 201 Created, berhasil membuat file di aset statis & 
+        Berhasil \\ \hline
+        3 & Mengirim data tanpa atribut wajib & 
+        website\_id: 1 \newline type: file & 
+        Status code 400 Bad Request, gagal karena atribut wajib tidak lengkap & 
+        Berhasil \\ \hline
+        4 & Mengirim data dengan tipe data atribut tidak valid & 
+        website\_id: "string" \newline name: public & 
+        Status code 400 Bad Request, gagal karena tipe data atribut tidak valid & 
+        Berhasil \\ \hline
+    \end{tabular}
+    \caption{Pengujian Fungsional Endpoint POST /asset-static}
+    \label{tab:asset_static_post_testing}
+\end{table}

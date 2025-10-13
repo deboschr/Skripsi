@@ -1,0 +1,105 @@
+\begin{lstlisting}[language=Javascript,caption={Asset Dynamic Controller}]
+const { AssetDynamicService } = require("../services/AssetDynamicService");
+const { Validator } = require("../utils/validator");
+const { responseHandler } = require("../utils/responseHandler");
+
+class AssetDynamicController {
+	static async getAll(req, res) {
+		try {
+			let { error } = Validator.getAllAssetDynamic(req.query);
+
+			if (error) {
+				const newError = new Error(error.details[0].message);
+				newError.code = 400;
+				throw newError;
+			}
+
+			let { data, meta } = await AssetDynamicService.readAll(req.query);
+
+			responseHandler(res, 200, data, meta);
+		} catch (error) {
+			console.error(error);
+			responseHandler(res, error.code, null, null, error.message);
+		}
+	}
+
+	static async getOne(req, res) {
+		try {
+			let readAssetDynamic = await AssetDynamicService.readOne(req.params.id);
+
+			responseHandler(res, 200, readAssetDynamic);
+		} catch (error) {
+			console.error(error);
+			responseHandler(res, error.code, null, null, error.message);
+		}
+	}
+
+	static async post(req, res) {
+		try {
+			let { error } = Validator.createAssetDynamic(req.body);
+
+			if (error) {
+				const newError = new Error(error.details[0].message);
+				newError.code = 400;
+				throw newError;
+			}
+
+			const createAssetDynamic = await AssetDynamicService.create(
+				req.body,
+				req.dataSession
+			);
+
+			responseHandler(res, 201, createAssetDynamic);
+		} catch (error) {
+			console.error(error);
+			responseHandler(res, error.code, null, null, error.message);
+		}
+	}
+
+	static async patch(req, res) {
+		try {
+			let { error } = Validator.updateAssetDynamic(req.body);
+
+			if (error) {
+				const newError = new Error(error.details[0].message);
+				newError.code = 400;
+				throw newError;
+			}
+
+			const updateAssetDynamic = await AssetDynamicService.update(
+				req.params.id,
+				req.body,
+				req.dataSession
+			);
+
+			responseHandler(res, 200, updateAssetDynamic);
+		} catch (error) {
+			console.error(error);
+			responseHandler(res, error.code, null, null, error.message);
+		}
+	}
+
+	static async delete(req, res) {
+		try {
+			let { error } = Validator.deleteAssetDynamic({
+				asset_dynamic_id: req.params.id,
+			});
+
+			if (error) {
+				const newError = new Error(error.details[0].message);
+				newError.code = 400;
+				throw newError;
+			}
+
+			await AssetDynamicService.delete(req.params.id);
+
+			responseHandler(res, 200);
+		} catch (error) {
+			console.error(error);
+			responseHandler(res, error.code, null, null, error.message);
+		}
+	}
+}
+
+module.exports = { AssetDynamicController };
+\end{lstlisting}

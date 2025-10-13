@@ -1,0 +1,50 @@
+\begin{lstlisting}[language=Javascript,caption={User Model}]
+const { DatabaseManager, DataTypes } = require("../config/DatabaseManager.js");
+const MyDB = DatabaseManager.getDatabase();
+
+const UserModel = MyDB.define(
+	"user",
+	{
+		user_id: {
+			type: DataTypes.INTEGER,
+			primaryKey: true,
+			autoIncrement: true,
+		},
+		name: {
+			type: DataTypes.STRING(200),
+			allowNull: false,
+		},
+		email: {
+			type: DataTypes.STRING(200),
+			allowNull: false,
+			unique: true,
+		},
+		password: {
+			type: DataTypes.TEXT,
+			allowNull: false,
+		},
+		created_at: {
+			type: DataTypes.BIGINT,
+			allowNull: true,
+		},
+		updated_at: {
+			type: DataTypes.BIGINT,
+			allowNull: true,
+		},
+	},
+	{
+		tableName: "user",
+		timestamps: false,
+		hooks: {
+			beforeCreate: (data) => {
+				data.created_at = new Date().getTime();
+			},
+			beforeUpdate: (data) => {
+				data.updated_at = new Date().getTime();
+			},
+		},
+	}
+);
+
+module.exports = { UserModel };
+\end{lstlisting}

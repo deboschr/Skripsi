@@ -1,0 +1,105 @@
+\begin{lstlisting}[language=Javascript,caption={Website Model}]
+const { DatabaseManager, DataTypes } = require("../config/DatabaseManager.js");
+const MyDB = DatabaseManager.getDatabase();
+const { UserModel } = require("./UserModel.js");
+const { DbConfigModel } = require("./DbConfigModel.js");
+
+const WebsiteModel = MyDB.define(
+	"website",
+	{
+		website_id: {
+			type: DataTypes.INTEGER,
+			primaryKey: true,
+			autoIncrement: true,
+		},
+		created_by: {
+			type: DataTypes.INTEGER,
+			allowNull: false,
+		},
+		updated_by: {
+			type: DataTypes.INTEGER,
+			allowNull: true,
+		},
+		db_config_id: {
+			type: DataTypes.INTEGER,
+			allowNull: true,
+		},
+		name: {
+			type: DataTypes.STRING(200),
+			allowNull: false,
+			unique: true,
+		},
+		dir_path: {
+			type: DataTypes.STRING(200),
+			allowNull: false,
+		},
+		created_at: {
+			type: DataTypes.BIGINT,
+			allowNull: true,
+		},
+		updated_at: {
+			type: DataTypes.BIGINT,
+			allowNull: true,
+		},
+	},
+	{
+		tableName: "website",
+		timestamps: false,
+		hooks: {
+			beforeCreate: (data) => {
+				data.created_at = new Date().getTime();
+			},
+			beforeUpdate: (data) => {
+				data.updated_at = new Date().getTime();
+			},
+		},
+	}
+);
+
+(function () {
+	// ######################################################################
+	WebsiteModel.belongsTo(UserModel, {
+		foreignKey: "created_by",
+		targetKey: "user_id",
+		onDelete: "RESTRICT",
+		onUpdate: "CASCADE",
+		as: "creator",
+	});
+
+	UserModel.hasMany(WebsiteModel, {
+		foreignKey: "created_by",
+		sourceKey: "user_id",
+		as: "create_website",
+	});
+
+	// ######################################################################
+	WebsiteModel.belongsTo(UserModel, {
+		foreignKey: "updated_by",
+		targetKey: "user_id",
+		onDelete: "RESTRICT",
+		onUpdate: "CASCADE",
+		as: "updator",
+	});
+
+	UserModel.hasMany(WebsiteModel, {
+		foreignKey: "updated_by",
+		sourceKey: "user_id",
+		as: "update_website",
+	});
+
+	// ######################################################################
+	WebsiteModel.belongsTo(DbConfigModel, {
+		foreignKey: "db_config_id",
+		targetKey: "db_config_id",
+		onDelete: "RESTRICT",
+		onUpdate: "CASCADE",
+	});
+
+	DbConfigModel.hasOne(WebsiteModel, {
+		foreignKey: "db_config_id",
+		sourceKey: "db_config_id",
+	});
+})();
+
+module.exports = { WebsiteModel };
+\end{lstlisting}

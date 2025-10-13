@@ -1,0 +1,36 @@
+Pada tahap ini, dirancang implementasi otentikasi berbasis \textit{Single Sign-On} (SSO) menggunakan protokol OAuth 2.0 yang disediakan oleh Google. SSO ini dirancang untuk mempermudah proses otentikasi pengguna di aplikasi web hasil \textit{generate}, sehingga pengguna dapat menggunakan kredensial Google mereka tanpa perlu membuat akun baru. Selain itu, implementasi ini memastikan bahwa hanya pengguna yang telah terdaftar dalam basis data aplikasi web hasil \textit{generate} yang diizinkan untuk mengakses sistem.
+
+Rancangan teknis meliputi teknologi yang digunakan, alur otentikasi, serta spesifikasi implementasi, sebagai berikut:
+
+\begin{enumerate}[label*=\arabic*.,ref=\arabic*]
+
+    \item \textbf{Teknologi yang Digunakan}\\
+    SSO menggunakan OAuth 2.0 Google dengan memanfaatkan layanan Google Identity Platform. Teknologi yang dipilih meliputi:
+    \begin{itemize}
+        \item \texttt{googleapis}: \textit{Library} untuk mengelola permintaan otentikasi OAuth 2.0.
+        \item \texttt{jsonwebtoken} (JWT): Untuk memvalidasi token ID yang diterima dari Google.
+        \item HTTPS: Semua komunikasi dilakukan melalui protokol yang aman untuk memastikan keamanan data.
+    \end{itemize}
+
+    \item \textbf{Alur Otentikasi OAuth 2.0}\\
+    Proses otentikasi OAuth 2.0 yang dirancang adalah sebagai berikut:
+    \begin{enumerate}[label=\alph*.]
+        \item \textbf{Permintaan otentikasi:}\\
+        Pengguna diarahkan ke endpoint otentikasi Google melalui URL otorisasi yang mencakup parameter seperti \textit{client\_id}, \textit{redirect\_uri}, \textit{response\_type}, dan \textit{scope}.
+        
+        \item \textbf{Penerimaan Kode Otorisasi:}\\
+        Setelah pengguna berhasil login ke Google, Google mengembalikan kode otorisasi ke \textit{redirect\_uri} aplikasi.
+
+        \item \textbf{Pertukaran Kode Otorisasi dengan Token Akses:}\\
+        Aplikasi web hasil \textit{generate} mengirimkan kode otorisasi ke endpoint token Google untuk mendapatkan token akses (\textit{access\_token}) dan token ID (\textit{id\_token}).
+
+        \item \textbf{Validasi Token ID:}\\
+        Token ID yang diterima dari Google divalidasi menggunakan \textit{library} \textit{jsonwebtoken} untuk memastikan keabsahan dan integritasnya.
+
+        \item \textbf{Validasi Email terhadap Basis Data:}\\
+        Email yang diambil dari token ID dibandingkan dengan data di basis data aplikasi web hasil \textit{generate}. Jika email ditemukan, akses diberikan. Jika tidak, pengguna diberi pesan bahwa akses ditolak.
+
+        \item \textbf{Akses Pengguna:}\\
+        Setelah validasi berhasil, pengguna dianggap terotentikasi dan diberikan akses ke aplikasi.
+    \end{enumerate}
+\end{enumerate}
