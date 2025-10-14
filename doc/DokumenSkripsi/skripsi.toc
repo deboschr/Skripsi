@@ -23,14 +23,14 @@
 \contentsline {section}{\numberline {3.4}Analisis Teknologi yang Digunakan}{5}{section.3.4}%
 \contentsline {chapter}{\numberline {4}Perancangan}{7}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Perancangan Kelas}{7}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Perancangan Alur}{7}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Perancangan Antarmuka}{7}{section.4.3}%
-\contentsline {chapter}{\numberline {5}Implementasi dan Pengujian}{9}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Implementasi}{9}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Pengujian}{9}{section.5.2}%
-\contentsline {chapter}{\numberline {6}Kesimpulan dan Saran}{11}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Kesimpulan}{11}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Saran}{11}{section.6.2}%
-\contentsline {chapter}{Daftar Referensi}{13}{chapter*.3}%
-\contentsline {chapter}{\numberline {A}Kode Program}{15}{appendix.A}%
-\contentsline {chapter}{\numberline {B}Hasil Eksperimen}{17}{appendix.B}%
+\contentsline {section}{\numberline {4.2}Perancangan Alur}{11}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Perancangan Antarmuka}{13}{section.4.3}%
+\contentsline {chapter}{\numberline {5}Implementasi dan Pengujian}{17}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Implementasi}{17}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Pengujian}{17}{section.5.2}%
+\contentsline {chapter}{\numberline {6}Kesimpulan dan Saran}{19}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Kesimpulan}{19}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Saran}{19}{section.6.2}%
+\contentsline {chapter}{Daftar Referensi}{21}{chapter*.3}%
+\contentsline {chapter}{\numberline {A}Kode Program}{23}{appendix.A}%
+\contentsline {chapter}{\numberline {B}Hasil Eksperimen}{25}{appendix.B}%

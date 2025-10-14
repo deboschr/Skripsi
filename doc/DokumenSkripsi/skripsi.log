@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.12)  12 OCT 2025 18:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.12)  14 OCT 2025 07:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Users/aderi/OneDrive/Documents/TUGAS-AKHIR/docs/Dokumen_Skripsi/skripsi.tex
-(c:/Users/aderi/OneDrive/Documents/TUGAS-AKHIR/docs/Dokumen_Skripsi/skripsi.tex
+**c:/Users/aderi/OneDrive/Documents/TUGAS-AKHIR/TugasAkhir/doc/DokumenSkripsi/skripsi.tex
+(c:/Users/aderi/OneDrive/Documents/TUGAS-AKHIR/TugasAkhir/doc/DokumenSkripsi/skripsi.tex
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-09-02>
 (C:\Users\aderi\AppData\Local\Programs\MiKTeX\tex/latex/base\report.cls
@@ -1058,28 +1058,92 @@ Bab 3.
 
 ]
 Bab 4.
+(Bab/perancangan/perancangan-kelas.tex
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 2.
+ (C:\Users\aderi\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `lmtt' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 10.
+ (C:\Users\aderi\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 
-[7]
+[7{C:/Users/aderi/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}]
+
+Package microtype Info: Character `029' is missing
+(microtype)             in font `T1/lmr/m/sc/10'.
+(microtype)             Ignoring protrusion settings for this character.
+[8]
+
+[9]
+<Gambar/040100-class-diagram.png, id=314, 1611.01875pt x 1370.11874pt>
+File: Gambar/040100-class-diagram.png Graphic file (type png)
+<use Gambar/040100-class-diagram.png>
+Package pdftex.def Info: Gambar/040100-class-diagram.png  used on input line 119.
+(pdftex.def)             Requested size: 445.99553pt x 379.30302pt.
+)
+
+[10] (Bab/perancangan/perancangan-alur.tex
+
+[11 <./Gambar/040100-class-diagram.png>]
+Overfull \hbox (20.43123pt too wide) in paragraph at lines 25--26
+[]\T1/lmr/m/n/10.95 (-20) Jika URL ada-lah ha-lam-an web, ma-ka di-ma-sukk-an kem-ba-li ke \T1/lmtt/m/n/10.95 Frontier \T1/lmr/m/n/10.95 (-20) me-la-lui \T1/lmtt/m/n/10.95 enqueueUrl()\T1/lmr/m/n/10.95 (-20) . 
+ []
+
+
+Overfull \hbox (45.7666pt too wide) in paragraph at lines 27--28
+[]\T1/lmr/m/n/10.95 (-20) (23^^U26) Ji-ka \T1/lmtt/m/n/10.95 fetch \T1/lmr/m/n/10.95 (-20) er-ror, di-bu-at ob-jek \T1/lmtt/m/n/10.95 BrokenLink\T1/lmr/m/n/10.95 (-20) , di-ki-rim ke \T1/lmtt/m/n/10.95 Controller \T1/lmr/m/n/10.95 (-20) (\T1/lmtt/m/n/10.95 streamBrokenLink()\T1/lmr/m/n/10.95 (-20) ),
+ []
+
+<Gambar/040200-sequence-diagram.png, id=337, 2094.82625pt x 2332.715pt>
+File: Gambar/040200-sequence-diagram.png Graphic file (type png)
+<use Gambar/040200-sequence-diagram.png>
+Package pdftex.def Info: Gambar/040200-sequence-diagram.png  used on input line 34.
+(pdftex.def)             Requested size: 469.47049pt x 522.77376pt.
+)
+
+[12] (Bab/perancangan/perancangan-antarmuka.tex
+
+[13 <./Gambar/040200-sequence-diagram.png>]
+<Gambar/040301-jendela-utama.png, id=360, 1300.86pt x 996.6033pt>
+File: Gambar/040301-jendela-utama.png Graphic file (type png)
+<use Gambar/040301-jendela-utama.png>
+Package pdftex.def Info: Gambar/040301-jendela-utama.png  used on input line 56.
+(pdftex.def)             Requested size: 445.99553pt x 341.68434pt.
+
+
+[14]
+<Gambar/040302-jendela-detail-broken-link.png, id=382, 1170.774pt x 995.8806pt>
+File: Gambar/040302-jendela-detail-broken-link.png Graphic file (type png)
+<use Gambar/040302-jendela-detail-broken-link.png>
+Package pdftex.def Info: Gambar/040302-jendela-detail-broken-link.png  used on input line 79.
+(pdftex.def)             Requested size: 445.99553pt x 379.36551pt.
+
+
+[15 <./Gambar/040301-jendela-utama.png>]))
+
+[16 <./Gambar/040302-jendela-detail-broken-link.png>]
 \openout2 = `Bab/bab5.aux'.
 
  (Bab/bab5.tex
+Bab 5.
+)
 
-[8
+[17
 
 
 
 
 ]
-Bab 5.
-)
-
-[9]
 \openout2 = `Bab/bab6.aux'.
 
  (Bab/bab6.tex
 
-[10
+[18
 
 
 
@@ -1088,41 +1152,32 @@ Bab 5.
 Bab 6.
 )
 
-[11] (skripsi.bbl
+[19] (skripsi.bbl
 
-[12
+[20
 
 
 
-]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 5.
- (C:\Users\aderi\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
-File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `lmtt' (encoding: T1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
-)
+])
 
-[13]
+[21]
 \openout2 = `Lampiran/lampA.aux'.
 
  (Lampiran/lampA.tex
 
-[14
+[22
 
 
 ]
 Lampiran A.
 )
 
-[15]
+[23]
 \openout2 = `Lampiran/lampB.aux'.
 
  (Lampiran/lampB.tex
 
-[16
+[24
 
 
 
@@ -1131,7 +1186,7 @@ Lampiran A.
 Lampiran B.
 )
 
-[17] (skripsi.aux (Bab/bab1.aux) (Bab/bab2.aux) (Bab/bab3.aux) (Bab/bab4.aux) (Bab/bab5.aux) (Bab/bab6.aux) (Lampiran/lampA.aux) (Lampiran/lampB.aux))
+[25] (skripsi.aux (Bab/bab1.aux) (Bab/bab2.aux) (Bab/bab3.aux) (Bab/bab4.aux) (Bab/bab5.aux) (Bab/bab6.aux) (Lampiran/lampA.aux) (Lampiran/lampB.aux))
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-09-02>
@@ -1140,17 +1195,17 @@ Package rerunfilecheck Info: File `skripsi.out' has not changed.
 (rerunfilecheck)             Checksum: 6FA15AFC814FE815B6CD25285C098555;4654.
  ) 
 Here is how much of TeX's memory you used:
- 39419 strings out of 468130
- 883493 string characters out of 5430632
- 1580146 words of memory out of 5000000
- 67168 multiletter control sequences out of 15000+600000
- 679434 words of font info for 112 fonts, out of 8000000 for 9000
+ 39708 strings out of 468130
+ 889737 string characters out of 5430632
+ 1584145 words of memory out of 5000000
+ 67296 multiletter control sequences out of 15000+600000
+ 686710 words of font info for 155 fonts, out of 8000000 for 9000
  1145 hyphenation exceptions out of 8191
- 110i,5n,107p,1071b,681s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\aderi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecxc1095.pk><C:/Users/aderi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/aderi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/aderi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbxi10.pfb><C:/Users/aderi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/aderi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/aderi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss8.pfb><C:/Users/aderi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb>
-Output written on skripsi.pdf (29 pages, 323261 bytes).
+ 110i,12n,107p,1080b,981s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\aderi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecxc1095.pk><C:/Users/aderi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/aderi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/aderi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbxi10.pfb><C:/Users/aderi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/aderi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/aderi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/aderi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss8.pfb><C:/Users/aderi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb>
+Output written on skripsi.pdf (37 pages, 5932082 bytes).
 PDF statistics:
- 422 PDF objects out of 1000 (max. 8388607)
- 70 named destinations out of 1000 (max. 500000)
- 29994 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 552 PDF objects out of 1000 (max. 8388607)
+ 133 named destinations out of 1000 (max. 500000)
+ 34110 words of extra memory for PDF output out of 35830 (max. 10000000)
 
