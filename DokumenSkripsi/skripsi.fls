@@ -1,6 +1,6 @@
-PWD c:\Users\aderi\OneDrive\Documents\TUGAS-AKHIR\TugasAkhir\doc\DokumenSkripsi
+PWD c:\Users\aderi\OneDrive\Documents\TUGAS-AKHIR\TugasAkhir\DokumenSkripsi
 INPUT C:\Users\aderi\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT c:\Users\aderi\OneDrive\Documents\TUGAS-AKHIR\TugasAkhir\doc\DokumenSkripsi\skripsi.tex
+INPUT c:\Users\aderi\OneDrive\Documents\TUGAS-AKHIR\TugasAkhir\DokumenSkripsi\skripsi.tex
 OUTPUT skripsi.log
 INPUT C:\Users\aderi\AppData\Local\Programs\MiKTeX\tex\latex\base\report.cls
 INPUT C:\Users\aderi\AppData\Local\Programs\MiKTeX\tex\latex\base\report.cls
