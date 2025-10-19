@@ -47,35 +47,16 @@
 *.swp
 *.synctex(busy)
 
-# Folder sementara latexmk atau TeXstudio
-latex.out/
+# Folder sementara LaTeX
+temp/
 out/
 build/
-_tex_temp/
-_tex_cache/
 
-# ===============================
-#   VS Code Specific
-# ===============================
-
-# VS Code settings and local workspace
+# =======================================
+#   Editor / OS
+# =======================================
 .vscode/
 *.code-workspace
-
-# ===============================
-#   OS / Miscellaneous
-# ===============================
-
-# macOS
 .DS_Store
-
-# Windows
 Thumbs.db
 desktop.ini
-
-# ===============================
-#   Custom (kamu bisa tambahkan)
-# ===============================
-
-# Folder lokal tidak penting
-DokumenSkripsi/*.aux
