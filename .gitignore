@@ -1,2 +1,84 @@
-Thumbs.db
+# ===============================
+#   LaTeX Build Artifacts
+# ===============================
+
+# File log, aux, dan cache build
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.synctex
+*.nav
+*.snm
+*.vrb
+*.dvi
+*.bbl
+*.blg
+*.ilg
+*.ind
+*.idx
+*.lof
+*.lot
+*.lol
+*.nlo
+*.nls
+*.brf
+*.glg
+*.glo
+*.gls
+*.ist
+*.acn
+*.acr
+*.alg
+
+# Hasil kompilasi akhir
+*.pdf
+*.ps
+
+# File sementara LaTeX atau TeX editor
+*.tmp
+*.bak
+*.backup
+*.sav
+*~
+*.swp
+*.synctex(busy)
+
+# Folder sementara latexmk atau TeXstudio
+latex.out/
+out/
+build/
+temp/
+_tex_temp/
+_tex_cache/
+
+# ===============================
+#   VS Code Specific
+# ===============================
+
+# VS Code settings and local workspace
+.vscode/
+*.code-workspace
+
+# ===============================
+#   OS / Miscellaneous
+# ===============================
+
+# macOS
 .DS_Store
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# ===============================
+#   Custom (kamu bisa tambahkan)
+# ===============================
+
+# Folder lokal tidak penting
+temp/
+Lampiran/*.aux
+Bab/*.aux
