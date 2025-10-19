@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.12)  15 OCT 2025 11:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.12)  20 OCT 2025 04:09
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Users/aderi/OneDrive/Documents/TUGAS-AKHIR/TugasAkhir/doc/DokumenSkripsi/skripsi.tex
-(c:/Users/aderi/OneDrive/Documents/TUGAS-AKHIR/TugasAkhir/doc/DokumenSkripsi/skripsi.tex
+**c:/Users/aderi/OneDrive/Documents/TUGAS-AKHIR/TugasAkhir/DokumenSkripsi/skripsi.tex
+(c:/Users/aderi/OneDrive/Documents/TUGAS-AKHIR/TugasAkhir/DokumenSkripsi/skripsi.tex
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-09-02>
 (C:\Users\aderi\AppData\Local\Programs\MiKTeX\tex/latex/base\report.cls
@@ -1240,132 +1240,4 @@ Bab 4.
 
 [48]
 Overfull \hbox (20.43123pt too wide) in paragraph at lines 25--26
-[]\T1/lmr/m/n/10.95 (-20) Jika URL ada-lah ha-lam-an web, ma-ka di-ma-sukk-an kem-ba-li ke \T1/lmtt/m/n/10.95 Frontier \T1/lmr/m/n/10.95 (-20) me-la-lui \T1/lmtt/m/n/10.95 enqueueUrl()\T1/lmr/m/n/10.95 (-20) . 
- []
-
-
-Overfull \hbox (45.7666pt too wide) in paragraph at lines 27--28
-[]\T1/lmr/m/n/10.95 (-20) (23^^U26) Ji-ka \T1/lmtt/m/n/10.95 fetch \T1/lmr/m/n/10.95 (-20) er-ror, di-bu-at ob-jek \T1/lmtt/m/n/10.95 BrokenLink\T1/lmr/m/n/10.95 (-20) , di-ki-rim ke \T1/lmtt/m/n/10.95 Controller \T1/lmr/m/n/10.95 (-20) (\T1/lmtt/m/n/10.95 streamBrokenLink()\T1/lmr/m/n/10.95 (-20) ),
- []
-
-<Gambar/040100-class-diagram.png, id=1007, 1611.01875pt x 1370.11874pt>
-File: Gambar/040100-class-diagram.png Graphic file (type png)
-<use Gambar/040100-class-diagram.png>
-Package pdftex.def Info: Gambar/040100-class-diagram.png  used on input line 34.
-(pdftex.def)             Requested size: 445.99553pt x 379.30302pt.
-<Gambar/040200-sequence-diagram.png, id=1008, 2094.82625pt x 2332.715pt>
-File: Gambar/040200-sequence-diagram.png Graphic file (type png)
-<use Gambar/040200-sequence-diagram.png>
-Package pdftex.def Info: Gambar/040200-sequence-diagram.png  used on input line 41.
-(pdftex.def)             Requested size: 469.47049pt x 522.77376pt.
-)
-
-[49 <./Gambar/040100-class-diagram.png>] (Bab/perancangan/perancangan-antarmuka.tex
-
-[50 <./Gambar/040200-sequence-diagram.png>]
-<Gambar/040301-jendela-utama.png, id=1027, 1300.86pt x 996.6033pt>
-File: Gambar/040301-jendela-utama.png Graphic file (type png)
-<use Gambar/040301-jendela-utama.png>
-Package pdftex.def Info: Gambar/040301-jendela-utama.png  used on input line 56.
-(pdftex.def)             Requested size: 445.99553pt x 341.68434pt.
-
-
-[51]
-<Gambar/040302-jendela-detail-broken-link.png, id=1049, 1170.774pt x 995.8806pt>
-File: Gambar/040302-jendela-detail-broken-link.png Graphic file (type png)
-<use Gambar/040302-jendela-detail-broken-link.png>
-Package pdftex.def Info: Gambar/040302-jendela-detail-broken-link.png  used on input line 79.
-(pdftex.def)             Requested size: 445.99553pt x 379.36551pt.
-
-
-[52 <./Gambar/040301-jendela-utama.png>]))
-
-[53 <./Gambar/040302-jendela-detail-broken-link.png>]
-\openout2 = `Bab/bab5.aux'.
-
- (Bab/bab5.tex
-
-[54
-
-
-
-
-]
-Bab 5.
-(Bab/implementasi-dan-pengujian/implementasi.tex (Bab/implementasi-dan-pengujian/implementasi/lingkungan-implementasi.tex) (Bab/implementasi-dan-pengujian/implementasi/implementasi-kelas.tex) (Bab/implementasi-dan-pengujian/implementasi/implementasi-antarmuka.tex)) (Bab/implementasi-dan-pengujian/pengujian.tex (Bab/implementasi-dan-pengujian/pengujian/pengujian-fungsional.tex) (Bab/implementasi-dan-pengujian/pengujian/pengujian-eksperimental.tex) (Bab/implementasi-dan-pengujian/pengujian/analisis-hasil-pengujian.tex)))
-
-[55]
-\openout2 = `Bab/bab6.aux'.
-
- (Bab/bab6.tex
-
-[56
-
-
-
-
-]
-Bab 6.
-(Bab/kesimpulan-dan-saran/kesimpulan.tex) (Bab/kesimpulan-dan-saran/saran.tex))
-
-[57] (skripsi.bbl
-
-[58
-
-
-
-])
-
-[59]
-\openout2 = `Lampiran/lampA.aux'.
-
- (Lampiran/lampA.tex
-
-[60
-
-
-]
-Lampiran A.
-)
-
-[61]
-\openout2 = `Lampiran/lampB.aux'.
-
- (Lampiran/lampB.tex
-
-[62
-
-
-
-
-]
-Lampiran B.
-)
-
-[63] (skripsi.aux (Bab/bab1.aux) (Bab/bab2.aux) (Bab/bab3.aux) (Bab/bab4.aux) (Bab/bab5.aux) (Bab/bab6.aux) (Lampiran/lampA.aux) (Lampiran/lampB.aux))
- ***********
-LaTeX2e <2025-06-01> patch level 1
-L3 programming layer <2025-09-02>
- ***********
-
-
-LaTeX Warning: There were undefined references.
-
-Package rerunfilecheck Info: File `skripsi.out' has not changed.
-(rerunfilecheck)             Checksum: 6CCE2C5AC382470DFCAC3837A78A86CA;10763.
- ) 
-Here is how much of TeX's memory you used:
- 41514 strings out of 468130
- 925841 string characters out of 5430632
- 2011449 words of memory out of 5000000
- 68473 multiletter control sequences out of 15000+600000
- 731510 words of font info for 271 fonts, out of 8000000 for 9000
- 1145 hyphenation exceptions out of 8191
- 110i,13n,107p,2037b,1767s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\aderi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecxc1095.pk><C:/Users/aderi/AppData/Roaming/MiKTeX/fonts/type1/bera/fvmb8a.pfb><C:/Users/aderi/AppData/Roaming/MiKTeX/fonts/type1/bera/fvmr8a.pfb><C:/Users/aderi/AppData/Roaming/MiKTeX/fonts/type1/bera/fvmro8a.pfb><C:/Users/aderi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/latxfont/lcircle1.pfb><C:/Users/aderi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/aderi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/aderi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbxi10.pfb><C:/Users/aderi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/aderi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsco10.pfb><C:/Users/aderi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/aderi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/Users/aderi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/aderi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr9.pfb><C:/Users/aderi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/aderi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss8.pfb><C:/Users/aderi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/Users/aderi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/aderi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt9.pfb>
-Output written on skripsi.pdf (75 pages, 6821079 bytes).
-PDF statistics:
- 1339 PDF objects out of 1440 (max. 8388607)
- 433 named destinations out of 1000 (max. 500000)
- 56450 words of extra memory for PDF output out of 61914 (max. 10000000)
-
+[]\T1/lmr/m/n/10.95 (-20) Jika URL ada-lah ha-lam-an web, ma-ka di-ma
