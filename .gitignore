@@ -79,6 +79,4 @@ desktop.ini
 # ===============================
 
 # Folder lokal tidak penting
-temp/
-Lampiran/*.aux
-Bab/*.aux
+DokumenSkripsi/*.aux
