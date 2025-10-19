@@ -21,4 +21,41 @@ Liu, B. (2011) {\em Web Data Mining: Exploring Hyperlinks, Contents, and Usage
 Sharan, K. dan Späth, P. (2022) {\em Learn JavaFX~17: Building User Experience
   and Interfaces with Java},  2rd edition. Apress,  Montgomery, AL, USA.
 
+\bibitem{RFC2518}
+Faizi, A., Carter, S.~R., dan Jensen, D. (1999) Http extensions for distributed
+  authoring. RFC  2518. RFC Editor, \url{http://www.rfc-editor.org}.
+
+\bibitem{RFC8297}
+Oku, K. (2017) An http status code for indicating hints. RFC  8297. RFC Editor,
+  \url{http://www.rfc-editor.org}.
+
+\bibitem{RFC4918}
+Dusseault, L. (2007) Http extensions for web distributed authoring and
+  versioning (webdav). RFC  4918. RFC Editor, \url{http://www.rfc-editor.org}.
+
+\bibitem{RFC3229}
+Goland, Y.~Y., van Hoff, A., dan Hellerstein, D.~M. (2002) Delta encoding in
+  http. RFC  3229. RFC Editor, \url{http://www.rfc-editor.org}.
+
+\bibitem{RFC8470}
+Thomson, M., Nottingham, M., dan Tarreau, W. (2018) Using early data in http.
+  RFC  8470. RFC Editor, \url{http://www.rfc-editor.org}.
+
+\bibitem{RFC6585}
+Fielding, R.~T. dan Nottingham, M. (2012) Additional http status codes. RFC
+  6585. RFC Editor, \url{http://www.rfc-editor.org}.
+
+\bibitem{RFC7725}
+Bray, T. (2016) An http status code to report legal obstacles. RFC  7725. RFC
+  Editor, \url{http://www.rfc-editor.org}.
+
+\bibitem{RFC2295}
+Holtman, K. dan Mutz, A. (1998) Transparent content negotiation in http. RFC
+  2295. RFC Editor, \url{http://www.rfc-editor.org}.
+
+\bibitem{RFC5842}
+Clemm, G., Crawford, J., Reschke, J.~F., dan Whitehead, J. (2010) Binding
+  extensions to web distributed authoring and versioning (webdav). RFC  5842.
+  RFC Editor, \url{http://www.rfc-editor.org}.
+
 \end{thebibliography}

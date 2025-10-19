@@ -3,34 +3,77 @@
 \contentsline {chapter}{Daftar Gambar}{xi}{section*.2}%
 \contentsline {chapter}{\numberline {1}Pendahuluan}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Latar Belakang}{1}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Rumusan Masalah}{1}{section.1.2}%
-\contentsline {section}{\numberline {1.3}Tujuan}{1}{section.1.3}%
-\contentsline {section}{\numberline {1.4}Batasan Masalah}{1}{section.1.4}%
-\contentsline {section}{\numberline {1.5}Metodologi}{1}{section.1.5}%
-\contentsline {section}{\numberline {1.6}Sistematika Pembahasan}{1}{section.1.6}%
-\contentsline {chapter}{\numberline {2}Landasan Teori}{3}{chapter.2}%
-\contentsline {section}{\numberline {2.1}HTTP~\cite {RFC9110}}{3}{section.2.1}%
-\contentsline {section}{\numberline {2.2}URI~\cite {RFC3986}}{3}{section.2.2}%
-\contentsline {section}{\numberline {2.3}HTML~\cite {powell:10:htmlcss}}{3}{section.2.3}%
-\contentsline {section}{\numberline {2.4}\textit {Web Crawling}~\cite {liu:11:webdatamining}}{3}{section.2.4}%
-\contentsline {section}{\numberline {2.5}JavaFX~\cite {sharan:22:learnjavafx17}}{3}{section.2.5}%
-\contentsline {section}{\numberline {2.6}Jsoup}{3}{section.2.6}%
-\contentsline {section}{\numberline {2.7}Java HTTP Client API}{3}{section.2.7}%
-\contentsline {chapter}{\numberline {3}Analisis}{5}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Analisis Masalah}{5}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Analisis Sistem Serupa}{5}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Analisis Kebutuhan}{5}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Analisis Teknologi yang Digunakan}{5}{section.3.4}%
-\contentsline {chapter}{\numberline {4}Perancangan}{7}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Perancangan Kelas}{7}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Perancangan Alur}{11}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Perancangan Antarmuka}{13}{section.4.3}%
-\contentsline {chapter}{\numberline {5}Implementasi dan Pengujian}{17}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Implementasi}{17}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Pengujian}{17}{section.5.2}%
-\contentsline {chapter}{\numberline {6}Kesimpulan dan Saran}{19}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Kesimpulan}{19}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Saran}{19}{section.6.2}%
-\contentsline {chapter}{Daftar Referensi}{21}{chapter*.3}%
-\contentsline {chapter}{\numberline {A}Kode Program}{23}{appendix.A}%
-\contentsline {chapter}{\numberline {B}Hasil Eksperimen}{25}{appendix.B}%
+\contentsline {section}{\numberline {1.2}Rumusan Masalah}{3}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Tujuan}{3}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Batasan Masalah}{3}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Metodologi}{3}{section.1.5}%
+\contentsline {section}{\numberline {1.6}Sistematika Pembahasan}{4}{section.1.6}%
+\contentsline {chapter}{\numberline {2}Landasan Teori}{5}{chapter.2}%
+\contentsline {section}{\numberline {2.1}HTTP~\cite {RFC9110}}{5}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Metode HTTP}{5}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Kode Status HTTP}{6}{subsection.2.1.2}%
+\contentsline {subsubsection}{\textit {Informational} 1xx}{6}{subsubsection*.3}%
+\contentsline {subsubsection}{\textit {Successful} 2xx}{7}{subsubsection*.4}%
+\contentsline {subsubsection}{\textit {Redirection} 3xx}{7}{subsubsection*.5}%
+\contentsline {subsubsection}{\textit {Client Error} 4xx}{8}{subsubsection*.6}%
+\contentsline {subsubsection}{\textit {Server Error} 5xx}{9}{subsubsection*.7}%
+\contentsline {section}{\numberline {2.2}URI~\cite {RFC3986}}{10}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Struktur Sintaks URL}{11}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Kategori Karakter dan \textit {Percent-Encoding}}{11}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Referensi Absolut dan Relatif}{12}{subsection.2.2.3}%
+\contentsline {section}{\numberline {2.3}HTML~\cite {powell:10:htmlcss}}{12}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Struktur Dasar HTML}{12}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Elemen Semantik dan Non-Semantik}{13}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}Atribut Global dan Spesifik}{13}{subsection.2.3.3}%
+\contentsline {section}{\numberline {2.4}\textit {Web Crawling}~\cite {liu:11:webdatamining}}{14}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Algoritma \textit {Crawling}}{14}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Jenis-Jenis \textit {Crawler}}{15}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.4.3}Tantangan Implementasi}{15}{subsection.2.4.3}%
+\contentsline {subsection}{\numberline {2.4.4}Etika dan Kepatuhan}{16}{subsection.2.4.4}%
+\contentsline {section}{\numberline {2.5}JavaFX~\cite {sharan:22:learnjavafx17}}{17}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Siklus Hidup Aplikasi}{17}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.5.2}Stage, Scene, dan Node}{18}{subsection.2.5.2}%
+\contentsline {subsection}{\numberline {2.5.3}Komponen FXML}{19}{subsection.2.5.3}%
+\contentsline {subsection}{\numberline {2.5.4}Controller, Property, dan Binding}{19}{subsection.2.5.4}%
+\contentsline {section}{\numberline {2.6}Jsoup}{20}{section.2.6}%
+\contentsline {subsection}{\numberline {2.6.1}Kelas Utama}{21}{subsection.2.6.1}%
+\contentsline {subsection}{\numberline {2.6.2}Contoh Kode Program}{23}{subsection.2.6.2}%
+\contentsline {section}{\numberline {2.7}Java HTTP Client API}{24}{section.2.7}%
+\contentsline {subsection}{\numberline {2.7.1}\texttt {HttpClient}}{24}{subsection.2.7.1}%
+\contentsline {subsection}{\numberline {2.7.2}\texttt {HttpRequest}}{26}{subsection.2.7.2}%
+\contentsline {subsection}{\numberline {2.7.3}\texttt {HttpResponse}}{26}{subsection.2.7.3}%
+\contentsline {subsection}{\numberline {2.7.4}\texttt {HttpHeaders}}{27}{subsection.2.7.4}%
+\contentsline {subsection}{\numberline {2.7.5}Contoh Kode Program}{28}{subsection.2.7.5}%
+\contentsline {chapter}{\numberline {3}Analisis}{29}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Analisis Masalah}{29}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Tautan Rusak}{29}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}\textit {Web Crawling}}{31}{subsection.3.1.2}%
+\contentsline {section}{\numberline {3.2}Analisis Sistem Serupa}{33}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Dead Link Checker}{34}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Broken Link Checker}{36}{subsection.3.2.2}%
+\contentsline {section}{\numberline {3.3}Analisis Kebutuhan}{39}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Kebutuhan Fungsional}{41}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Kebutuhan Non-Fungsional}{41}{subsection.3.3.2}%
+\contentsline {section}{\numberline {3.4}Analisis Teknologi yang Digunakan}{42}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}JavaFX}{42}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Jsoup}{43}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}Java HTTP Client API}{44}{subsection.3.4.3}%
+\contentsline {chapter}{\numberline {4}Perancangan}{45}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Perancangan Kelas}{45}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Perancangan Alur}{48}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Perancangan Antarmuka}{50}{section.4.3}%
+\contentsline {chapter}{\numberline {5}Implementasi dan Pengujian}{55}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Implementasi}{55}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Lingkungan Implementasi}{55}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Implementasi Kelas}{55}{subsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.1.3}Implementasi Antarmuka}{55}{subsection.5.1.3}%
+\contentsline {section}{\numberline {5.2}Pengujian}{55}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Pengujian Fungsional}{55}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Pengujian Eksperimental}{55}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}Analisis Hasil Pengujian}{55}{subsection.5.2.3}%
+\contentsline {chapter}{\numberline {6}Kesimpulan dan Saran}{57}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Kesimpulan}{57}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Saran}{57}{section.6.2}%
+\contentsline {chapter}{Daftar Referensi}{59}{chapter*.8}%
+\contentsline {chapter}{\numberline {A}Kode Program}{61}{appendix.A}%
+\contentsline {chapter}{\numberline {B}Hasil Eksperimen}{63}{appendix.B}%

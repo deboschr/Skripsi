@@ -21,36 +21,36 @@ A level-1 auxiliary file: Lampiran/lampA.aux
 Reallocating 'name_of_file' (item size: 1) to 19 items.
 A level-1 auxiliary file: Lampiran/lampB.aux
 Database file #1: referensi.bib
-You've used 5 entries,
+You've used 14 entries,
             1957 wiz_defined-function locations,
-            568 strings with 5188 characters,
-and the built_in function-call counts, 736 in all, are:
-= -- 58
-> -- 33
+            621 strings with 6075 characters,
+and the built_in function-call counts, 1773 in all, are:
+= -- 136
+> -- 99
 < -- 0
-+ -- 10
-- -- 10
-* -- 62
-:= -- 127
-add.period$ -- 12
-call.type$ -- 5
-change.case$ -- 5
++ -- 30
+- -- 30
+* -- 151
+:= -- 331
+add.period$ -- 39
+call.type$ -- 14
+change.case$ -- 14
 chr.to.int$ -- 0
-cite$ -- 5
-duplicate$ -- 42
-empty$ -- 84
-format.name$ -- 10
-if$ -- 166
+cite$ -- 14
+duplicate$ -- 96
+empty$ -- 174
+format.name$ -- 30
+if$ -- 371
 int.to.chr$ -- 0
 int.to.str$ -- 0
 missing$ -- 6
-newline$ -- 18
-num.names$ -- 5
+newline$ -- 45
+num.names$ -- 14
 pop$ -- 15
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 2
+skip$ -- 4
 stack$ -- 0
 substring$ -- 0
 swap$ -- 3
@@ -59,6 +59,6 @@ text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 5
+while$ -- 14
 width$ -- 0
-write$ -- 52
+write$ -- 142
