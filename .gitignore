@@ -51,7 +51,6 @@
 latex.out/
 out/
 build/
-temp/
 _tex_temp/
 _tex_cache/
 
